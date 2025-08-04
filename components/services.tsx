@@ -2,137 +2,100 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Wrench, ShoppingCart, Truck, Factory, Shield, Clock, MapPin } from "lucide-react"
+import { Recycle, Truck, Factory, Shield, Wrench, Users } from "lucide-react"
 
 const services = [
   {
-    icon: Wrench,
-    title: "Trabajos que Realizamos",
-    items: [
-      "Retiro de scraps industriales",
-      "Desguace industrial completo",
-      "Corte de maquinaria pesada",
-      "Desmantelamiento de buques",
-      "Prensado automotriz",
-      "Demolición controlada",
-    ],
-    color: "bg-blue-600",
+    icon: Recycle,
+    title: "Reciclaje de Metales",
+    description: "Procesamiento especializado de chatarra ferrosa y no ferrosa con certificación ambiental.",
+    features: ["Hierro y Acero", "Aluminio", "Cobre", "Bronce"],
   },
-  {
-    icon: ShoppingCart,
-    title: "Materiales que Compramos",
-    items: [
-      "Chatarra ferrosa y no ferrosa",
-      "Desguace industrial",
-      "Maquinaria en desuso",
-      "Metales preciosos",
-      "Viruta metálica",
-      "Equipos electrónicos",
-    ],
-    color: "bg-green-600",
-  },
-]
-
-const features = [
   {
     icon: Truck,
-    title: "Logística Integral",
-    description: "Retiro, transporte y procesamiento con flota propia",
+    title: "Logística y Transporte",
+    description: "Servicio integral de retiro, transporte y logística con flota propia especializada.",
+    features: ["Retiro en planta", "Transporte especializado", "Documentación completa", "Seguimiento GPS"],
   },
   {
     icon: Factory,
-    title: "Capacidad Industrial",
-    description: "Equipos especializados para grandes volúmenes",
+    title: "Desguace Industrial",
+    description: "Desmantelamiento profesional de maquinaria y estructuras industriales.",
+    features: ["Maquinaria pesada", "Estructuras metálicas", "Equipos industriales", "Demolición selectiva"],
   },
   {
     icon: Shield,
-    title: "Certificaciones",
-    description: "Cumplimos todas las normativas ambientales",
+    title: "Gestión Ambiental",
+    description: "Manejo responsable de residuos con certificaciones ambientales vigentes.",
+    features: ["ISO 14001", "Certificados de disposición", "Trazabilidad completa", "Informes ambientales"],
   },
   {
-    icon: Clock,
-    title: "Servicio 24/7",
-    description: "Disponibilidad completa para emergencias",
+    icon: Wrench,
+    title: "Servicios Técnicos",
+    description: "Asesoramiento técnico especializado para optimizar procesos de reciclaje.",
+    features: ["Consultoría técnica", "Análisis de materiales", "Optimización de procesos", "Capacitación"],
+  },
+  {
+    icon: Users,
+    title: "Atención Personalizada",
+    description: "Servicio 24/7 con atención personalizada para cada cliente y proyecto.",
+    features: ["Atención 24/7", "Cotizaciones rápidas", "Seguimiento personalizado", "Soporte técnico"],
   },
 ]
 
 export default function Services() {
   return (
-    <section id="servicios" className="py-20 bg-green-50">
+    <section id="servicios" className="py-20 bg-gradient-to-br from-gray-700 via-gray-600 to-green-700">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nuestros Servicios</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Soluciones integrales para la gestión de residuos industriales y reciclaje de materiales
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Nuestros Servicios</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Ofrecemos soluciones integrales para el manejo responsable de residuos industriales
           </p>
         </div>
 
-        {/* Main Services */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className={`${service.color} text-white`}>
-                <div className="flex items-center gap-3">
-                  <service.icon className="w-8 h-8" />
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
+            <Card
+              key={index}
+              className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 group"
+            >
+              <CardHeader className="text-center">
+                <div className="bg-green-600 p-4 rounded-full w-16 h-16 mx-auto mb-4 group-hover:bg-green-500 transition-colors">
+                  <service.icon className="w-8 h-8 text-white" />
                 </div>
+                <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <ul className="space-y-3">
-                  {service.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0" />
-                      <span className="text-gray-700 font-medium">{item}</span>
+              <CardContent className="text-center">
+                <p className="text-gray-300 mb-6">{service.description}</p>
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="text-sm text-gray-400 flex items-center justify-center">
+                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                      {feature}
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6 bg-gray-900 hover:bg-gray-800">Solicitar Cotización</Button>
+                <Button
+                  variant="outline"
+                  className="border-green-400 text-green-400 hover:bg-green-400 hover:text-white bg-transparent"
+                  onClick={() => window.open("https://wa.me/1154852128", "_blank")}
+                >
+                  Consultar
+                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Additional Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="w-8 h-8 text-green-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="bg-green-600 text-white rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">¿Necesitas una Solución Personalizada?</h3>
-            <p className="text-xl mb-6 text-green-100">
-              Nuestro equipo de expertos está listo para evaluar tu proyecto y ofrecerte la mejor propuesta
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                variant="secondary"
-                onClick={() => window.open("https://wa.me/1154852128", "_blank")}
-                className="bg-green-50 text-green-600 hover:bg-green-100"
-              >
-                <MapPin className="mr-2 w-5 h-5" />
-                Visita Técnica Gratuita
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-green-600 bg-transparent"
-              >
-                Ver Casos de Éxito
-              </Button>
-            </div>
-          </div>
+        <div className="text-center mt-12">
+          <Button
+            size="lg"
+            onClick={() => window.open("https://wa.me/1154852128", "_blank")}
+            className="bg-green-600 hover:bg-green-700 text-lg px-8 py-4"
+          >
+            Solicitar Cotización Personalizada
+          </Button>
         </div>
       </div>
     </section>
