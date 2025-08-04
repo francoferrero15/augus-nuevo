@@ -1,0 +1,674 @@
+/* Reset básico para eliminar márgenes y paddings por defecto */
+
+body {
+  font-family: 'Times New Roman', Times, serif;  color: #f5f5dc;
+    line-height: 1.6;
+    text-transform: uppercase;
+    background-image: url(../fotos/converted_image.png); 
+
+  background-size: cover; /* Cubre toda la pantalla */
+  background-repeat: no-repeat; /* No repite la imagen */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+}
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sección de bienvenida */
+.welcome-section {
+  color: white; /* Texto blanco */
+  text-align: center; /* Centrar contenido */
+  padding: 40px 20px; /* Espaciado interno */
+  margin-top: 20px; /* Separación con el carrusel */
+}
+
+.welcome-container {
+  max-width: 900px; /* Limitar ancho del texto */
+  margin: 0 auto; /* Centrar el contenido */
+}
+
+.welcome-section h1 {
+  font-size: 2.5rem; /* Tamaño grande del título */
+  font-weight: 700; /* Negrita */
+  font-family: 'Poppins', sans-serif; /* Fuente secundaria */
+    letter-spacing: 1px; /* Espaciado entre letras */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #f8f8f8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+.welcome-section p {
+  font-size: 1.2rem; /* Tamaño del texto descriptivo */
+  font-family: 'Poppins', sans-serif; /* Fuente secundaria */
+  font-weight: 300; /* Peso ligero */
+  margin-bottom: 30px; /* Espacio debajo del párrafo */
+  font-weight: bold;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px; /* Botón más grande */
+  font-size: 1rem; /* Tamaño del texto del botón */
+  color: white; /* Texto blanco */
+  background-color: #1abc9c; /* Botón verde */
+  text-decoration: none; /* Sin subrayado */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Negrita */
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif; /* Fuente secundaria */
+  border: 3px solid #163c1f; /* Borde verde grueso */  
+
+
+}
+
+.cta-button:hover {
+  background-color: #16a085; /* Color más oscuro al pasar el cursor */
+}
+/* Estilos generales */
+body, html {
+  font-family: 'Montserrat' , sans-serif;
+  color: #f6f60a;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+/* Aplica la fuente a todo el body */
+body {
+  font-family: 'Poppins', sans-serif; /* Fuente secundaria */
+  color: #f5f5dc;
+  line-height: 1.6;
+  text-transform: uppercase;}
+
+/* Secciones */
+section {
+  padding: 20px 10px; /* Reducir espacio vertical dentro de las secciones */
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 2.5rem; /* Ajusta este valor para hacer el texto más grande */
+  font-weight: 700; /* Opcional: hace que el título sea más grueso */
+  color: #ffffff; /* Asegúrate de que el color destaque sobre el fondo */
+  margin-bottom: 0.5rem;
+  text-align: center; /* Alinea el título al centro, si deseas */
+}
+header {
+  color: #ffffff; /* Texto blanco */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+header h1 {
+  margin: 0;
+  color: #ffffff;
+  flex: 1;
+  text-align: left; /* Alineación a la izquierda */
+}
+/* Estilos para el menú de navegación */
+nav {
+  flex: 2;
+  text-align: right; /* Alineación a la derecha */
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 1.5rem;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li a {
+  color: #ffffff; /* Texto blanco */
+  font-weight: bold;
+  transition: color 0.3s;
+  text-decoration: none;
+
+}
+nav ul li a:hover {
+  color: #cce5cc; /* Color claro en hover */
+}
+/* Opcional: ajustes de fuente para encabezados */
+h1, h2, h3 {
+  font-weight: 800; /* Usa un peso más grueso para encabezados */
+  color: #b21d1d;
+}
+
+p {
+  font-weight: 600; /* Peso más liviano para párrafos */
+  color: #ffffff;
+}
+h1, h2, h3 {
+  color: #f8f8f8;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+body {
+  background-image: url(../fotos/converted_image.png); /* Beige claro */
+  color: #ffffff; /* Color de texto oscuro para contraste */
+}
+
+/* Carrusel */
+.carrusel {
+  position: relative;
+  width: 100%; /* Ancho completo del carrusel */
+  height: 300px; /* Altura fija del carrusel */
+  overflow: hidden; /* Oculta contenido fuera del carrusel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrusel-contenedor {
+  display: flex;
+  animation: circular 20s linear infinite; /* Movimiento continuo */
+}
+
+.carrusel-item {
+  flex: none;
+  width: 450px; /* Todas las imágenes tendrán tamaño uniforme */
+  height: 450px; /* Formato cuadrado */
+  margin-right: 10px; /* Espaciado entre imágenes */
+}
+
+.carrusel-item img {
+  width: 100%; /* La imagen ocupará todo el contenedor cuadrado */
+  height: 100%;
+  object-fit: cover; /* Las imágenes se escalarán sin distorsión */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: sombra */
+}
+
+/* Animación para desplazamiento continuo */
+@keyframes circular {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-310px * 5)); } /* Ancho + margen entre imágenes */
+}
+
+/* Sección de imagen de fondo (Hero) */
+.hero {
+  /* background: url('./fotos/pexels-tomfisk-6150114.jpg') no-repeat center center/cover; */
+  /*background-color: rgba(0, 0, 0, 0.3); /* Color gris con opacidad del 30% */
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #4b9954;
+  padding: 20px;
+  margin-top: 5px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #f8f8f8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+.cta-button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 1.5rem 3.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cta-button:hover {
+  background-color: #218838;
+}
+
+/* Sección Nosotros */
+.about {
+  background-color: #aeaeae;
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 60px;
+  margin-bottom: 1rem;
+}
+
+.services {
+
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.services h2 {
+  margin-bottom: 2rem;
+}
+
+.mc {
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.service-cards {
+  display: flex;
+  gap: 20px; /* Espacio entre cuadros */
+  flex-wrap: wrap; /* Permitir que se adapten en pantallas pequeñas */
+  margin-bottom: 20px; /* Espacio debajo de la sección */
+  width: 100%;
+}
+
+.service-cards p {
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+
+}
+
+.service-card {
+    color: white;
+    background-color: #4baa48; /* Fondo beige */
+    border: 3px solid #163c1f; /* Borde verde grueso */  
+    padding: 10px; /* Más espacio interno */
+    border-radius: 10px; /* Bordes más suaves */
+    width: 550PX; /* Más ancho */
+    height: auto; /* Ajustar altura según el contenido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+    text-align: justify;
+    margin: 0 auto; 
+
+}
+.service-card  li{
+  font-weight: bold;
+  font-size: 1.25rem;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+
+}
+.service-card  h4{
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-decoration: underline;
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Fuente secundaria */
+
+
+}
+.service-card p, 
+.service-card ul {
+    font-size: 1.1rem; /* Texto más grande */
+    line-height: 1.8; /* Mejor separación entre líneas */
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+/* Estilos para la sección de servicios */
+.services2 {
+  background-color: #4baa48; /* Fondo beige */
+  color: #ffffff;
+  border: 3px solid #163c1f; /* Borde verde grueso */  
+  padding: 3rem 4rem;
+  border-radius: 8px;
+  max-width: 80%; /* Ajuste para que ocupe casi todo el ancho de la página */
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+}
+
+.services2 h4 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif; /* Fuente secundaria */
+}
+
+.services2 p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  text-transform: uppercase;}
+
+.services2 ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.services2 ul ul {
+  list-style-type: circle;
+  padding-left: 1.5rem;
+}
+
+.services2 li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.services2 li strong {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.services2 li ul li {
+  color: #ffffff;
+}
+
+
+/* Responsive: Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row; /* Mantener horizontalidad */
+}
+.service-card {
+  flex: 1 1 100%; /* Cada cuadro ocupa todo el ancho */
+  padding: 15px; /* Reducir el padding interno */
+  font-size: 0.9rem; /* Reducir el tamaño del texto */
+}
+
+.service-card h4 {
+  font-size: 1.2rem; /* Reducir tamaño de los títulos */
+  text-align: center; /* Centrar títulos en pantallas pequeñas */
+}
+
+.service-card.large {
+  padding: 15px; /* Reducir el padding interno */
+  font-size: 0.9rem; /* Reducir tamaño del texto */
+}
+
+.service-cards {
+  gap: 15px; /* Reducir espacio entre cuadros */
+}
+
+nav ul {
+    gap: 1rem; /* Reducir espacio entre elementos */
+}
+
+  .hero h2 {
+      font-size: 1rem; /* Reducir el tamaño del título */
+  }
+
+  .hero p {
+      font-size: 1rem; /* Reducir tamaño del texto descriptivo */
+  }
+
+  .hero img {
+      width: 90%; /* Limitar tamaño de la imagen */
+      margin: 0 auto;
+  }
+  .service-card {
+    flex: 1 1 100%; /* Cuadros ocupan el ancho completo */
+    text-align: left; /* Texto alineado a la izquierda en móviles */
+}
+
+.service-card.large {
+    padding: 20px; /* Espaciado interno consistente */
+}
+
+.service-cards {
+    gap: 15px; /* Reducir el espacio entre cuadros */
+}
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: row; /* Alinear elementos en columna */
+    padding: 0.5rem; /* Reducir padding */
+}
+
+header h1 {
+    font-size: 1.2rem; /* Reducir tamaño del título */
+    text-align: center; /* Centrar el título */
+}
+
+body {
+  background-image: url(../fotos/hd2.jpg);
+  background-size: cover; /* Cubre toda la pantalla */
+  background-repeat: no-repeat; /* No repite la imagen */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */}
+
+.service-card {
+  padding: 10px; /* Reducir padding aún más */
+  font-size: 0.85rem; /* Texto más pequeño */
+}
+
+.service-card h4 {
+  font-size: 1rem; /* Reducir títulos en pantallas pequeñas */
+  text-align: center; /* Centrar títulos */
+}
+
+
+.service-cards {
+  gap: 10px; /* Reducir espacio entre cuadros */
+}
+nav ul {
+    flex-direction: row; /* Menú en columna */
+    gap: 0.5rem; /* Reducir el espacio entre enlaces */
+    align-items: justify; /* Centrar los enlaces */
+    margin-top: 0.5rem;
+}
+
+nav ul li a {
+    font-size: 1rem; /* Texto más pequeño para enlaces */
+}
+.service-card {
+  padding: 15px; /* Reducir padding interno */
+  font-size: 0.9rem; /* Texto más pequeño */
+}
+
+.service-card h4 {
+  font-size: 1.2rem; /* Título más pequeño */
+}
+
+.service-card.large {
+  padding: 15px; /* Reducir espaciado interno del cuadro grande */
+  font-size: 0.9rem; /* Reducir el tamaño del texto */
+}
+.services2 {
+text-align: left;
+max-width: 90%;
+}
+/* Sección principal (Hero) */
+.hero {
+    padding: 1rem; /* Reducir padding */
+    text-align: center; /* Centrar el texto */
+}
+
+.hero h2 {
+    font-size: 1.5rem; /* Reducir tamaño del título */
+}
+
+.hero p {
+    font-size: 1rem; /* Reducir tamaño del texto */
+}
+
+.hero img {
+    max-width: 100%; /* Ajustar imagen al contenedor */
+    height: auto; /* Mantener proporciones */
+    border-radius: 5px; /* Suavizar bordes */
+}
+
+/* Cuadros de servicios o contenido */
+.service-card {
+    width: 90%; /* Ajustar ancho del cuadro al 90% */
+    margin: 10px auto; /* Centrar los cuadros */
+    padding: 15px; /* Reducir padding interno */
+    font-size: 0.9rem; /* Reducir tamaño del texto */
+    text-align: left; /* Mantener texto justificado */
+}
+
+.service-card h4 {
+    font-size: 1.2rem; /* Títulos más pequeños */
+    text-align: center; /* Centrar títulos */
+}
+
+/* Imágenes en secciones */
+img {
+    max-width: 100%; /* Ajustar todas las imágenes al ancho del contenedor */
+    height: auto; /* Mantener proporciones */
+}
+
+/* Botones */
+.cta-button {
+    font-size: 1rem; /* Reducir tamaño del texto del botón */
+    padding: 10px 15px; /* Ajustar tamaño del botón */
+    margin: 1rem auto; /* Centrar botón */
+    display: block; /* Asegurar que se comporte como bloque */
+    width: 80%; /* Hacer que ocupe el 80% del ancho */
+}
+
+/* General */
+body {
+    font-size: 0.9rem; /* Reducir el tamaño general del texto */
+}
+
+/* Footer */
+footer {
+    text-align: center; /* Centrar contenido del footer */
+    font-size: 0.8rem; /* Reducir tamaño del texto del footer */
+    padding: 1rem 0;
+}
+}
+@media (min-width: 1500px) {
+  /* Contenedor de los cuadros */
+  .service-cards {
+      display: flex; /* Utilizamos flexbox para organizar los cuadros */
+      flex-wrap: wrap; /* Permitir que los elementos se distribuyan en filas */
+      justify-content: center; /* Centrar los elementos horizontalmente */
+      gap: 30px; /* Espacio entre los cuadros */
+      margin: 0 auto; /* Centrar el contenedor */
+  }
+
+  /* Cuadros superiores (TRABAJOS QUE REALIZAMOS y COMPRAMOS) */
+  .service-card {
+    flex: 1 ; /* Cuadros ocupan el ancho completo */
+
+      padding: 20px; /* Espaciado interno */
+      background-color: #388e3c; /* Fondo verde */
+      color: white; /* Texto en blanco */
+      text-align: justify; /* Texto centrado */
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para estilo */
+  }
+
+  /* Cuadro inferior (QUIENES SOMOS) */
+  .services2 {
+      max-width: 63%; /* Sin límite de ancho */
+      padding: 30px; /* Espaciado interno más amplio */
+      background-color: #388e3c; /* Fondo más claro */
+      color: white; /* Texto en blanco */
+      text-align: justify; /* Texto justificado */
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para estilo */
+  }
+
+  /* Encabezados */
+  .service-card h4 {
+      font-size: 1.5rem; /* Aumentar tamaño del título */
+      margin-bottom: 10px; /* Espaciado inferior */
+  }
+
+  .service-card.large h4 {
+      text-align: center; /* Centrar el título de "QUIENES SOMOS" */
+      margin-bottom: 20px; /* Espaciado inferior */
+  }
+}
+/* Sección Galería */
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 5px;
+  overflow-x: auto; /* Esto permite desplazamiento horizontal si es necesario */
+}
+
+.gallery img {
+  width: 24%; /* Cada imagen ocuparÃ¡ el 24% del ancho del contenedor */
+  height: auto;
+  border-radius: 2px;
+  transition: transform 0.3s ease; /* AnimaciÃ³n para ampliar imagen al pasar el ratÃ³n */
+}
+
+.gallery img:hover {
+  transform: scale(1.05); /* Efecto de ampliaciÃ³n cuando pasas el ratÃ³n por encima */
+}
+/* Sección de Contacto */
+.contact {
+  color: #ffffff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+.contact h2{
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-icon {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.contact-icon img {
+  width: 80px; /* Ajusta el tamaño del ícono según prefieras */
+  height: 80px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.contact-icon:hover img {
+  transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+.contact-icon:hover {
+  transform: translateY(-5px); /* Efecto de elevación */
+}
+/* Footer */
+footer {
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
