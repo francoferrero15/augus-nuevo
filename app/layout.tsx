@@ -8,8 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "R.A.G - Reciclaje y Gestión Industrial",
   description:
-    "Líderes en reciclaje industrial y gestión de residuos. Soluciones profesionales para desguace, chatarra y materiales industriales.",
-  keywords: "reciclaje industrial, desguace, chatarra, gestión residuos, Buenos Aires",
+    "Líderes en reciclaje industrial con más de 10 años de experiencia. Soluciones integrales para el manejo responsable de residuos industriales.",
     generator: 'v0.dev'
 }
 
@@ -19,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang="es">
       <body className={inter.className}>{children}</body>
     </html>
   )

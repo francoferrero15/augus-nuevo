@@ -8,11 +8,11 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-bold text-white mb-6">Sobre R.A.G</h2>
-            <p className="text-lg text-gray-300 mb-6">
+            <p className="text-lg text-white mb-6">
               Con más de 10 años de experiencia en el sector, somos líderes en reciclaje y desguace industrial. Nos
               especializamos en brindar soluciones integrales y responsables para el manejo de residuos industriales.
             </p>
-            <p className="text-gray-300 mb-8">
+            <p className="text-white mb-8">
               Nuestro compromiso con el medio ambiente y la calidad nos ha posicionado como referentes en la industria,
               trabajando con las principales empresas del país.
             </p>
@@ -29,7 +29,7 @@ export default function About() {
                 <CardContent className="p-4 text-center">
                   <item.icon className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h3 className="font-semibold text-white text-sm">{item.title}</h3>
-                  <p className="text-xs text-gray-400">{item.desc}</p>
+                  <p className="text-xs text-gray-300">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}

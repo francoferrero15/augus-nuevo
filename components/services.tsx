@@ -1,8 +1,8 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Recycle, Truck, Factory, Shield, Wrench, Users } from "lucide-react"
+import { Recycle, Truck, Factory } from "lucide-react"
 
 const services = [
   {
@@ -23,33 +23,15 @@ const services = [
     description: "Desmantelamiento profesional de maquinaria y estructuras industriales.",
     features: ["Maquinaria pesada", "Estructuras metálicas", "Equipos industriales", "Demolición selectiva"],
   },
-  {
-    icon: Shield,
-    title: "Gestión Ambiental",
-    description: "Manejo responsable de residuos con certificaciones ambientales vigentes.",
-    features: ["ISO 14001", "Certificados de disposición", "Trazabilidad completa", "Informes ambientales"],
-  },
-  {
-    icon: Wrench,
-    title: "Servicios Técnicos",
-    description: "Asesoramiento técnico especializado para optimizar procesos de reciclaje.",
-    features: ["Consultoría técnica", "Análisis de materiales", "Optimización de procesos", "Capacitación"],
-  },
-  {
-    icon: Users,
-    title: "Atención Personalizada",
-    description: "Servicio 24/7 con atención personalizada para cada cliente y proyecto.",
-    features: ["Atención 24/7", "Cotizaciones rápidas", "Seguimiento personalizado", "Soporte técnico"],
-  },
 ]
 
 export default function Services() {
   return (
-    <section id="servicios" className="py-20 bg-gradient-to-br from-gray-700 via-gray-600 to-green-700">
+    <section id="servicios" className="py-16 bg-gradient-to-br from-gray-700 via-gray-600 to-green-700">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Nuestros Servicios</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Nuestros Servicios</h2>
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Ofrecemos soluciones integrales para el manejo responsable de residuos industriales
           </p>
         </div>
@@ -58,44 +40,31 @@ export default function Services() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 group"
+              className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
             >
-              <CardHeader className="text-center">
-                <div className="bg-green-600 p-4 rounded-full w-16 h-16 mx-auto mb-4 group-hover:bg-green-500 transition-colors">
+              <CardContent className="p-6">
+                <div className="bg-green-600 p-4 rounded-full mb-4 mx-auto w-fit">
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-gray-300 mb-6">{service.description}</p>
+                <h3 className="text-xl font-bold text-white mb-3 text-center">{service.title}</h3>
+                <p className="text-gray-300 mb-4 text-center text-sm">{service.description}</p>
                 <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="text-sm text-gray-400 flex items-center justify-center">
-                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-gray-300 text-sm">
+                      <div className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
                 <Button
-                  variant="outline"
-                  className="border-green-400 text-green-400 hover:bg-green-400 hover:text-white bg-transparent"
                   onClick={() => window.open("https://wa.me/1154852128", "_blank")}
+                  className="w-full bg-green-600 hover:bg-green-700 text-white rounded-full"
                 >
                   Consultar
                 </Button>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button
-            size="lg"
-            onClick={() => window.open("https://wa.me/1154852128", "_blank")}
-            className="bg-green-600 hover:bg-green-700 text-lg px-8 py-4"
-          >
-            Solicitar Cotización Personalizada
-          </Button>
         </div>
       </div>
     </section>

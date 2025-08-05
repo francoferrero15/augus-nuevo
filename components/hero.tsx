@@ -35,7 +35,7 @@ export default function Hero() {
             medio ambiente desde hace más de 10 años.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+          <div className="flex justify-center mb-16">
             <Button
               size="lg"
               onClick={() => window.open("https://wa.me/1154852128", "_blank")}
@@ -43,14 +43,6 @@ export default function Hero() {
             >
               Solicitar Cotización
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => document.getElementById("servicios")?.scrollIntoView({ behavior: "smooth" })}
-              className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-lg px-10 py-6 rounded-full"
-            >
-              Ver Servicios
             </Button>
           </div>
 
