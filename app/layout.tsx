@@ -29,9 +29,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://rag.com.ar",
   },
-  verification: {
-    google: "tu-codigo-de-verificacion-google",
-  },
     generator: 'v0.dev'
 }
 
@@ -48,42 +45,6 @@ export default function RootLayout({
         <meta name="geo.placename" content="Buenos Aires" />
         <meta name="geo.position" content="-34.6118;-58.3960" />
         <meta name="ICBM" content="-34.6118, -58.3960" />
-        <meta name="google-site-verification" content="tu-codigo-de-verificacion-google" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "R.A.G - Reciclaje y Gestión Industrial",
-              "description": "Empresa líder en reciclaje industrial, desguace de vehículos y compra de chatarra en Buenos Aires",
-              "url": "https://rag.com.ar",
-              "telephone": "+54 11 5485-2128",
-              "email": "info@rag.com.ar",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Buenos Aires",
-                "addressCountry": "AR"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": -34.6118,
-                "longitude": -58.3960
-              },
-              "openingHours": "Mo-Fr 08:00-18:00",
-              "priceRange": "$$",
-              "serviceArea": {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                  "@type": "GeoCoordinates",
-                  "latitude": -34.6118,
-                  "longitude": -58.3960
-                },
-                "geoRadius": "100000"
-              }
-            })
-          }}
-        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
