@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "R.A.G - Reciclaje Industrial y Desguace de Vehículos en Buenos Aires | Compra de Chatarra",
   description: "Empresa líder en reciclaje industrial, desguace de vehículos y compra de chatarra en Buenos Aires. Más de 10 años transformando residuos industriales en oportunidades. Certificación ISO 14001. Servicio 24/7.",
   keywords: "reciclaje industrial Buenos Aires, desguace vehículos Argentina, compra chatarra metálica, residuos industriales, reciclaje metales ferrosos, gestión residuos empresariales, desmantelamiento industrial, reciclaje aluminio cobre, logística residuos, certificación ambiental ISO 14001, economía circular, valorización residuos, reciclaje sustentable",
+    verification: {
+    google: "AHXNVObxLjfDqkp03R3Xv8HFs6EuZiq8FWrLv81ex7g" 
+  },
   authors: [{ name: "R.A.G Reciclaje y Gestión" }],
   creator: "R.A.G",
   publisher: "R.A.G",
