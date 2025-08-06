@@ -21,27 +21,26 @@ export default function Hero() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
         {/* Badge superior */}
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm mb-8">
-          <span className="text-green-300 text-sm font-medium">✨ Líderes en Reciclado de Chatarra</span>
+          <span className="text-green-300 text-sm font-medium">✨ Líderes en Reciclaje Industrial</span>
         </div>
 
-        {/* Título principal optimizado para SEO */}
+        {/* Título principal con gradiente */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          <span className="text-white">Reciclado</span>
+          <span className="text-white">Soluciones</span>
           <br />
           <span className="bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent">
-            Responsable
+            Industriales
           </span>
           <br />
-          <span className="text-white">de Metales</span>
+          <span className="text-white">de Reciclaje</span>
         </h1>
 
-        {/* Descripción optimizada con palabras clave */}
+        {/* Descripción */}
         <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed">
-          Transformamos chatarra en oportunidades. Reciclaje responsable de metales ferrosos y no ferrosos 
-          en Buenos Aires con más de 10 años de experiencia y certificación ambiental.
+          Transformamos residuos industriales en oportunidades. Servicio profesional, eficiente y comprometido con el medio ambiente desde hace más de 10 años en Buenos Aires.
         </p>
 
-        {/* Botón de acción principal */}
+        {/* Botón de acción */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
           <Button 
             onClick={scrollToContact}
@@ -60,7 +59,7 @@ export default function Hero() {
               <span className="text-white font-bold text-xl">10+</span>
             </div>
             <h3 className="text-white font-semibold text-lg mb-2">Años de Experiencia</h3>
-            <p className="text-gray-300 text-sm">Líderes en reciclado de chatarra y desguace industrial</p>
+            <p className="text-gray-300 text-sm">Líderes en reciclaje industrial y desguace de vehículos</p>
           </div>
 
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
@@ -68,7 +67,7 @@ export default function Hero() {
               <span className="text-white font-bold text-xl">24/7</span>
             </div>
             <h3 className="text-white font-semibold text-lg mb-2">Servicio Continuo</h3>
-            <p className="text-gray-300 text-sm">Disponibilidad total para compra de metales</p>
+            <p className="text-gray-300 text-sm">Disponibilidad total para atender tus necesidades</p>
           </div>
 
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
@@ -76,7 +75,7 @@ export default function Hero() {
               <span className="text-white font-bold text-xl">ISO</span>
             </div>
             <h3 className="text-white font-semibold text-lg mb-2">Certificación ISO 14001</h3>
-            <p className="text-gray-300 text-sm">Reciclaje responsable certificado</p>
+            <p className="text-gray-300 text-sm">Gestión ambiental certificada y responsable</p>
           </div>
         </div>
       </div>

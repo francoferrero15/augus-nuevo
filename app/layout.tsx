@@ -6,16 +6,16 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "R.A.G - Reciclado de Chatarra | Reciclaje Industrial Buenos Aires",
-  description: "Reciclaje responsable de metales ferrosos y no ferrosos en Buenos Aires. Empresa líder en desguace industrial, compra de chatarra y gestión de residuos. Servicio 24/7 con certificación ISO 14001.",
+  title: "R.A.G - Reciclaje Industrial y Desguace de Vehículos en Buenos Aires | Compra de Chatarra",
+  description: "Empresa líder en reciclaje industrial, desguace de vehículos y compra de chatarra en Buenos Aires. Más de 10 años transformando residuos industriales en oportunidades. Certificación ISO 14001. Servicio 24/7.",
   keywords: "reciclaje industrial Buenos Aires, desguace vehículos Argentina, compra chatarra metálica, residuos industriales, reciclaje metales ferrosos, gestión residuos empresariales, desmantelamiento industrial, reciclaje aluminio cobre, logística residuos, certificación ambiental ISO 14001, economía circular, valorización residuos, reciclaje sustentable",
   authors: [{ name: "R.A.G Reciclaje y Gestión" }],
   creator: "R.A.G",
   publisher: "R.A.G",
   robots: "index, follow",
   openGraph: {
-    title: "R.A.G - Reciclado de Chatarra | Reciclaje Industrial Buenos Aires",
-    description: "Reciclaje responsable de metales. Líderes en desguace industrial y compra de chatarra en Buenos Aires. Más de 10 años de experiencia.",
+    title: "R.A.G - Reciclaje Industrial y Desguace en Buenos Aires",
+    description: "Líderes en reciclaje industrial y desguace de vehículos. Transformamos residuos en oportunidades con más de 10 años de experiencia en Buenos Aires.",
     url: "https://rag.com.ar",
     siteName: "R.A.G Reciclaje Industrial",
     locale: "es_AR",
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "R.A.G - Reciclado de Chatarra Buenos Aires",
-    description: "Reciclaje responsable de metales. Empresa líder en desguace industrial y compra de chatarra en Buenos Aires.",
+    title: "R.A.G - Reciclaje Industrial Buenos Aires",
+    description: "Empresa líder en reciclaje industrial y desguace de vehículos en Buenos Aires. Servicio profesional 24/7.",
   },
   alternates: {
     canonical: "https://rag.com.ar",
   },
   verification: {
-    google: "AHXNVObxLjfDqkp03R3Xv8HFs6EuZiq8FWrLv81ex7g",
+    google: "tu-codigo-de-verificacion-google",
   },
     generator: 'v0.dev'
 }
@@ -48,15 +48,15 @@ export default function RootLayout({
         <meta name="geo.placename" content="Buenos Aires" />
         <meta name="geo.position" content="-34.6118;-58.3960" />
         <meta name="ICBM" content="-34.6118, -58.3960" />
-        <meta name="google-site-verification" content="AHXNVObxLjfDqkp03R3Xv8HFs6EuZiq8FWrLv81ex7g" />
+        <meta name="google-site-verification" content="tu-codigo-de-verificacion-google" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "R.A.G - Reciclado de Chatarra",
-              "description": "Reciclaje responsable de metales ferrosos y no ferrosos en Buenos Aires",
+              "name": "R.A.G - Reciclaje y Gestión Industrial",
+              "description": "Empresa líder en reciclaje industrial, desguace de vehículos y compra de chatarra en Buenos Aires",
               "url": "https://rag.com.ar",
               "telephone": "+54 11 5485-2128",
               "email": "info@rag.com.ar",
@@ -80,39 +80,6 @@ export default function RootLayout({
                   "longitude": -58.3960
                 },
                 "geoRadius": "100000"
-              },
-              "sameAs": [
-                "https://wa.me/5491154852128"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Servicios de Reciclaje",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Reciclaje de Metales",
-                      "description": "Procesamiento de chatarra ferrosa y no ferrosa"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Desguace Industrial",
-                      "description": "Desmantelamiento de maquinaria y estructuras"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Logística de Residuos",
-                      "description": "Transporte y gestión integral de residuos"
-                    }
-                  }
-                ]
               }
             })
           }}

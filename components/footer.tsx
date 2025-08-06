@@ -9,8 +9,8 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">R.A.G</h3>
             <p className="text-gray-400 mb-4 max-w-md">
-              Líderes en reciclado de chatarra y desguace industrial en Buenos Aires. 
-              Más de 10 años ofreciendo reciclaje responsable de metales con compromiso ambiental.
+              Líderes en reciclaje industrial y desguace de vehículos en Buenos Aires. 
+              Más de 10 años transformando residuos en oportunidades con compromiso ambiental.
             </p>
             <div className="flex space-x-4">
               <div className="flex items-center text-sm text-gray-400">
@@ -19,7 +19,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center text-sm text-gray-400">
                 <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                Reciclaje Responsable
+                Servicio 24/7
               </div>
             </div>
           </div>
@@ -28,10 +28,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Servicios</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Reciclado de Metales</li>
-              <li>Compra de Chatarra</li>
+              <li>Reciclaje de Metales</li>
+              <li>Logística y Transporte</li>
               <li>Desguace Industrial</li>
-              <li>Logística de Residuos</li>
+              <li>Compra de Chatarra</li>
             </ul>
           </div>
 
@@ -57,8 +57,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 R.A.G - Reciclado de Chatarra. Todos los derechos reservados. 
-            Empresa especializada en reciclaje responsable de metales en Buenos Aires.
+            © 2024 R.A.G - Reciclaje y Gestión Industrial. Todos los derechos reservados.
           </p>
         </div>
       </div>

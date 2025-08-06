@@ -8,13 +8,13 @@ export default function About() {
             <h2 className="text-4xl font-bold text-white mb-6">Sobre R.A.G</h2>
             <div className="space-y-6 text-gray-200">
               <p className="text-lg leading-relaxed">
-                Con más de <strong className="text-green-300">10 años de experiencia</strong> en el reciclado de chatarra, somos líderes en Buenos Aires especializados en el procesamiento responsable de metales ferrosos y no ferrosos.
+                Con más de <strong className="text-green-300">10 años de experiencia</strong> en el sector del reciclaje industrial, somos líderes en Buenos Aires especializados en el procesamiento de residuos industriales, desguace de vehículos y compra de chatarra metálica.
               </p>
               <p className="text-lg leading-relaxed">
-                Nos especializamos en brindar <strong className="text-green-300">soluciones integrales</strong> para el reciclaje de metales, trabajando con certificación ambiental ISO 14001 y comprometidos con prácticas sustentables.
+                Nos especializamos en brindar <strong className="text-green-300">soluciones integrales y responsables</strong> para el manejo de residuos industriales, trabajando con certificación ambiental ISO 14001 y comprometidos con la economía circular.
               </p>
               <p className="text-lg leading-relaxed">
-                Nuestro compromiso con el <strong className="text-green-300">reciclaje responsable</strong> nos ha posicionado como referentes en la industria, trabajando con las principales empresas industriales de Buenos Aires y el área metropolitana.
+                Nuestro compromiso con el <strong className="text-green-300">medio ambiente y la calidad</strong> nos ha posicionado como referentes en la industria del reciclaje, trabajando con las principales empresas industriales de Buenos Aires y el área metropolitana.
               </p>
             </div>
           </div>
@@ -28,7 +28,7 @@ export default function About() {
                 </svg>
               </div>
               <h3 className="text-white font-semibold text-lg mb-2">Certificación ISO</h3>
-              <p className="text-gray-300 text-sm">Reciclaje responsable certificado</p>
+              <p className="text-gray-300 text-sm">Calidad garantizada</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center">
@@ -38,7 +38,7 @@ export default function About() {
                 </svg>
               </div>
               <h3 className="text-white font-semibold text-lg mb-2">Equipo Experto</h3>
-              <p className="text-gray-300 text-sm">Especialistas en metales</p>
+              <p className="text-gray-300 text-sm">Profesionales capacitados</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center">
