@@ -3,7 +3,11 @@ import type { Metadata } from "next"
 import { Inter } from 'next/font/google'
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true
+})
 
 export const metadata: Metadata = {
   title: "R.A.G - Reciclado de Chatarra | Reciclaje Industrial Buenos Aires",
@@ -49,6 +53,9 @@ export default function RootLayout({
         <meta name="geo.position" content="-34.6118;-58.3960" />
         <meta name="ICBM" content="-34.6118, -58.3960" />
         <meta name="google-site-verification" content="AHXNVObxLjfDqkp03R3Xv8HFs6EuZiq8FWrLv81ex7g" />
+      </head>
+      <body className={inter.className}>
+        {children}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -83,42 +90,11 @@ export default function RootLayout({
               },
               "sameAs": [
                 "https://wa.me/5491154852128"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Servicios de Reciclaje",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Reciclaje de Metales",
-                      "description": "Procesamiento de chatarra ferrosa y no ferrosa"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Desguace Industrial",
-                      "description": "Desmantelamiento de maquinaria y estructuras"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Logística de Residuos",
-                      "description": "Transporte y gestión integral de residuos"
-                    }
-                  }
-                ]
-              }
+              ]
             })
           }}
         />
-      </head>
-      <body className={inter.className}>{children}</body>
+      </body>
     </html>
   )
 }
