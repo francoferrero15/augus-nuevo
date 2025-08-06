@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-
+'use client'
 export default function Services() {
   const openWhatsApp = (service: string) => {
     const message = `Hola, me interesa conocer más sobre el servicio de ${service}`
