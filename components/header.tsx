@@ -1,123 +1,135 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react"
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Phone, Mail, MapPin, Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
     setIsMenuOpen(false)
   }
 
+  const openWhatsApp = () => {
+    window.open('https://wa.me/5491154852128?text=Hola, me interesa conocer más sobre sus servicios de reciclaje industrial', '_blank')
+  }
+
   return (
-    <header className="relative">
-      {/* Top Bar */}
-      <div className="bg-green-600 text-white py-2 px-4">
-        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
-          <div className="flex items-center space-x-4 mb-2 sm:mb-0">
-            <div className="flex items-center">
-              <Phone className="w-4 h-4 mr-1" />
+    <header className="w-full bg-gradient-to-br from-slate-700 via-slate-600 to-green-600">
+      {/* Barra superior de contacto */}
+      <div className="bg-green-500 text-white py-2 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+          <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-2">
+              <Phone className="h-4 w-4" />
               <span>+54 11 5485-2128</span>
             </div>
-            <div className="flex items-center">
-              <Mail className="w-4 h-4 mr-1" />
+            <div className="flex items-center space-x-2">
+              <Mail className="h-4 w-4" />
               <span>info@rag.com.ar</span>
             </div>
           </div>
-          <div className="flex items-center">
-            <MapPin className="w-4 h-4 mr-1" />
+          <div className="flex items-center space-x-2 mt-2 sm:mt-0">
+            <MapPin className="h-4 w-4" />
             <span>Buenos Aires, Argentina</span>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation */}
-      <nav className="bg-gradient-to-br from-gray-700 via-gray-600 to-green-700 shadow-lg">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
+      {/* Navegación principal */}
+      <nav className="bg-slate-700/90 backdrop-blur-sm border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="text-2xl font-bold text-white">R.A.G</div>
+            <div className="flex-shrink-0">
+              <h1 className="text-2xl font-bold text-white">R.A.G</h1>
+              <p className="text-xs text-green-300">Reciclaje y Gestión</p>
+            </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <button
-                onClick={() => scrollToSection("inicio")}
-                className="text-white hover:text-green-300 transition-colors duration-200"
-              >
-                Inicio
-              </button>
-              <button
-                onClick={() => scrollToSection("servicios")}
-                className="text-white hover:text-green-300 transition-colors duration-200"
-              >
-                Servicios
-              </button>
-              <button
-                onClick={() => scrollToSection("nosotros")}
-                className="text-white hover:text-green-300 transition-colors duration-200"
-              >
-                Nosotros
-              </button>
-              <button
-                onClick={() => scrollToSection("contacto")}
-                className="text-white hover:text-green-300 transition-colors duration-200"
-              >
-                Contacto
-              </button>
-              <Button
-                onClick={() => window.open("https://wa.me/1154852128", "_blank")}
-                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full"
+            {/* Navegación desktop */}
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-8">
+                <button 
+                  onClick={() => scrollToSection('inicio')}
+                  className="text-white hover:text-green-300 px-3 py-2 text-sm font-medium transition-colors"
+                >
+                  Inicio
+                </button>
+                <button 
+                  onClick={() => scrollToSection('servicios')}
+                  className="text-white hover:text-green-300 px-3 py-2 text-sm font-medium transition-colors"
+                >
+                  Servicios
+                </button>
+                <button 
+                  onClick={() => scrollToSection('nosotros')}
+                  className="text-white hover:text-green-300 px-3 py-2 text-sm font-medium transition-colors"
+                >
+                  Nosotros
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contacto')}
+                  className="text-white hover:text-green-300 px-3 py-2 text-sm font-medium transition-colors"
+                >
+                  Contacto
+                </button>
+              </div>
+            </div>
+
+            {/* Botón WhatsApp */}
+            <div className="hidden md:block">
+              <Button 
+                onClick={openWhatsApp}
+                className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105"
               >
                 WhatsApp
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-white hover:text-green-300 transition-colors duration-200"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Botón menú móvil */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-white hover:text-green-300 p-2"
+              >
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Menú móvil */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-white/20">
-              <div className="flex flex-col space-y-4">
-                <button
-                  onClick={() => scrollToSection("inicio")}
-                  className="text-white hover:text-green-300 transition-colors duration-200 text-left"
+            <div className="md:hidden">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-800/95 backdrop-blur-sm rounded-lg mt-2">
+                <button 
+                  onClick={() => scrollToSection('inicio')}
+                  className="text-white hover:text-green-300 block px-3 py-2 text-base font-medium w-full text-left"
                 >
                   Inicio
                 </button>
-                <button
-                  onClick={() => scrollToSection("servicios")}
-                  className="text-white hover:text-green-300 transition-colors duration-200 text-left"
+                <button 
+                  onClick={() => scrollToSection('servicios')}
+                  className="text-white hover:text-green-300 block px-3 py-2 text-base font-medium w-full text-left"
                 >
                   Servicios
                 </button>
-                <button
-                  onClick={() => scrollToSection("nosotros")}
-                  className="text-white hover:text-green-300 transition-colors duration-200 text-left"
+                <button 
+                  onClick={() => scrollToSection('nosotros')}
+                  className="text-white hover:text-green-300 block px-3 py-2 text-base font-medium w-full text-left"
                 >
                   Nosotros
                 </button>
-                <button
-                  onClick={() => scrollToSection("contacto")}
-                  className="text-white hover:text-green-300 transition-colors duration-200 text-left"
+                <button 
+                  onClick={() => scrollToSection('contacto')}
+                  className="text-white hover:text-green-300 block px-3 py-2 text-base font-medium w-full text-left"
                 >
                   Contacto
                 </button>
-                <Button
-                  onClick={() => window.open("https://wa.me/1154852128", "_blank")}
-                  className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full w-fit"
+                <Button 
+                  onClick={openWhatsApp}
+                  className="bg-green-500 hover:bg-green-600 text-white w-full mt-2 rounded-full"
                 >
                   WhatsApp
                 </Button>

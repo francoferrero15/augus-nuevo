@@ -1,76 +1,83 @@
-"use client"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Recycle, Truck, Shield } from "lucide-react"
+'use client'
+
+import { Button } from '@/components/ui/button'
+import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
+  const scrollToContact = () => {
+    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <section
-      id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-700 via-gray-600 to-green-700"
-    >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-green-400/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-48 h-48 bg-green-500/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-green-300/20 rounded-full blur-lg animate-pulse delay-500"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-700 via-slate-600 to-green-600">
+      {/* Elementos decorativos flotantes */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-20 h-20 bg-green-400/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-bounce"></div>
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-green-300/30 rounded-full blur-lg animate-pulse delay-1000"></div>
+        <div className="absolute bottom-40 right-1/3 w-24 h-24 bg-white/5 rounded-full blur-xl animate-bounce delay-500"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-6">
-            <span className="inline-block bg-green-600/20 backdrop-blur-sm border border-green-400/30 text-green-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              ✨ Líderes en Reciclaje Industrial
-            </span>
-          </div>
-
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-            <span className="text-white block">Soluciones</span>
-            <span className="text-green-400 block drop-shadow-lg">Industriales</span>
-            <span className="text-white block">de Reciclaje</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl mb-10 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Transformamos residuos industriales en oportunidades. Servicio profesional, eficiente y comprometido con el
-            medio ambiente desde hace más de 10 años.
-          </p>
-
-          <div className="flex justify-center mb-16">
-            <Button
-              size="lg"
-              onClick={() => window.open("https://wa.me/1154852128", "_blank")}
-              className="bg-green-600 hover:bg-green-700 text-lg px-10 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
-            >
-              Solicitar Cotización
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </div>
-
-          {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: Recycle, title: "Reciclaje Responsable", desc: "Procesos certificados ISO 14001" },
-              { icon: Truck, title: "Logística Integral", desc: "Flota propia especializada" },
-              { icon: Shield, title: "Servicio Confiable", desc: "Más de 10 años de experiencia" },
-            ].map((feature, index) => (
-              <div key={index} className="group">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-                  <div className="bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-full mb-4 mx-auto w-fit group-hover:shadow-lg transition-shadow">
-                    <feature.icon className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+        {/* Badge superior */}
+        <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm mb-8">
+          <span className="text-green-300 text-sm font-medium">✨ Líderes en Reciclado de Chatarra</span>
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center backdrop-blur-sm">
-          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
+        {/* Título principal optimizado para SEO */}
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <span className="text-white">Reciclado</span>
+          <br />
+          <span className="bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent">
+            Responsable
+          </span>
+          <br />
+          <span className="text-white">de Metales</span>
+        </h1>
+
+        {/* Descripción optimizada con palabras clave */}
+        <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed">
+          Transformamos chatarra en oportunidades. Reciclaje responsable de metales ferrosos y no ferrosos 
+          en Buenos Aires con más de 10 años de experiencia y certificación ambiental.
+        </p>
+
+        {/* Botón de acción principal */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <Button 
+            onClick={scrollToContact}
+            size="lg" 
+            className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105"
+          >
+            Solicitar Cotización
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+
+        {/* Tarjetas de características */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+            <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <span className="text-white font-bold text-xl">10+</span>
+            </div>
+            <h3 className="text-white font-semibold text-lg mb-2">Años de Experiencia</h3>
+            <p className="text-gray-300 text-sm">Líderes en reciclado de chatarra y desguace industrial</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+            <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <span className="text-white font-bold text-xl">24/7</span>
+            </div>
+            <h3 className="text-white font-semibold text-lg mb-2">Servicio Continuo</h3>
+            <p className="text-gray-300 text-sm">Disponibilidad total para compra de metales</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+            <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <span className="text-white font-bold text-xl">ISO</span>
+            </div>
+            <h3 className="text-white font-semibold text-lg mb-2">Certificación ISO 14001</h3>
+            <p className="text-gray-300 text-sm">Reciclaje responsable certificado</p>
+          </div>
         </div>
       </div>
     </section>
