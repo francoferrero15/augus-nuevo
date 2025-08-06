@@ -1,4 +1,3 @@
-'use client'
 export default function About() {
   return (
     <section id="nosotros" className="py-20 bg-gradient-to-br from-slate-700 via-slate-600 to-green-600">
