@@ -88,17 +88,17 @@ Email: ${formData.email}`
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left - Contact Info Card */}
-          <div className="bg-[#1a2332] rounded-xl p-8 md:p-10">
+          <div className="bg-[#1a2332] rounded-xl p-8 md:p-10 shadow-xl">
             <div className="space-y-6 mb-10">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#e85d00] rounded-lg flex items-center justify-center flex-shrink-0">
+                <div key={index} className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 bg-[#e85d00] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
                     <info.icon className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">{info.title}</h4>
                     {info.link ? (
-                      <a href={info.link} className="text-gray-400 hover:text-[#e85d00] transition-colors">
+                      <a href={info.link} className="text-gray-400 hover:text-[#e85d00] transition-colors duration-200">
                         {info.value}
                       </a>
                     ) : (
@@ -112,7 +112,7 @@ Email: ${formData.email}`
             {/* WhatsApp Button */}
             <Button
               onClick={() => window.open("https://wa.me/5491154852128", "_blank")}
-              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold py-6 text-base"
+              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Contactar por WhatsApp
@@ -120,7 +120,7 @@ Email: ${formData.email}`
           </div>
 
           {/* Right - Contact Form */}
-          <div className="bg-white rounded-xl p-8 md:p-10 shadow-sm">
+          <div className="bg-white rounded-xl p-8 md:p-10 shadow-lg">
             <div className="mb-6 pb-4 border-b-2 border-[#e85d00]">
               <h3 className="font-[family-name:var(--font-barlow-condensed)] text-2xl font-bold text-[#1a2332] uppercase">
                 Envianos tu consulta
@@ -239,7 +239,7 @@ Email: ${formData.email}`
 
               <Button
                 type="submit"
-                className="w-full bg-[#e85d00] hover:bg-[#d45500] text-white font-semibold uppercase tracking-wide py-6 text-base"
+                className="w-full bg-[#e85d00] hover:bg-[#d45500] text-white font-semibold uppercase tracking-wide py-6 text-base shadow-md hover:shadow-lg transition-all duration-300"
               >
                 Enviar consulta
               </Button>

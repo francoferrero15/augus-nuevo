@@ -70,14 +70,14 @@ export default function Services() {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
               {/* Card Header */}
               <div className="bg-[#1a2332] p-6 flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#e85d00] rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#e85d00] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-[family-name:var(--font-barlow-condensed)] text-xl font-bold text-white uppercase">
+                <h3 className="font-[family-name:var(--font-barlow-condensed)] text-xl font-bold text-white uppercase leading-tight">
                   {service.title}
                 </h3>
               </div>
@@ -91,7 +91,7 @@ export default function Services() {
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-3 text-gray-700">
                       <span className="w-2 h-2 bg-[#e85d00] rounded-full flex-shrink-0"></span>
-                      <span className="text-sm">{feature}</span>
+                      <span className="text-sm font-medium">{feature}</span>
                     </li>
                   ))}
                 </ul>

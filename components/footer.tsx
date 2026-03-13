@@ -38,7 +38,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link 
                     href="#servicios" 
-                    className="text-gray-400 hover:text-[#e85d00] transition-colors"
+                    className="text-gray-400 hover:text-[#e85d00] transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {service}
                   </Link>
@@ -55,16 +55,16 @@ export default function Footer() {
             <div className="space-y-4">
               <a 
                 href="tel:+5491154852128" 
-                className="flex items-center gap-3 text-gray-400 hover:text-[#e85d00] transition-colors"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#e85d00] transition-colors duration-200 group"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
                 <span>+54 11 5485-2128</span>
               </a>
               <a 
                 href="mailto:Augustoguilhou@hotmail.com" 
-                className="flex items-center gap-3 text-gray-400 hover:text-[#e85d00] transition-colors"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#e85d00] transition-colors duration-200 group"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
                 <span>Augustoguilhou@hotmail.com</span>
               </a>
               <div className="flex items-start gap-3 text-gray-400">

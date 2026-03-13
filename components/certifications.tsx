@@ -41,15 +41,15 @@ export default function Certifications() {
         </div>
 
         {/* Certifications Grid */}
-        <div className="grid md:grid-cols-3 gap-px bg-gray-700 rounded-xl overflow-hidden">
+        <div className="grid md:grid-cols-3 gap-px bg-[#3a4a5f] rounded-xl overflow-hidden">
           {certifications.map((cert, index) => (
             <div 
               key={index}
-              className="bg-[#1a2332] p-8 hover:bg-[#263547] transition-colors text-center"
+              className="bg-[#1a2332] p-8 md:p-10 hover:bg-[#263547] transition-all duration-300 text-center group"
             >
               {/* Label */}
               <div className="mb-6">
-                <span className="font-[family-name:var(--font-barlow-condensed)] text-4xl md:text-5xl font-bold text-[#e85d00]">
+                <span className="font-[family-name:var(--font-barlow-condensed)] text-4xl md:text-5xl font-bold text-[#e85d00] group-hover:scale-110 inline-block transition-transform duration-300">
                   {cert.label}
                 </span>
               </div>

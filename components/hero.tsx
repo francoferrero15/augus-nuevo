@@ -52,7 +52,7 @@ export default function Hero() {
             <Button 
               asChild
               size="lg"
-              className="bg-[#e85d00] hover:bg-[#d45500] text-white font-semibold uppercase tracking-wide px-8 py-6 text-base"
+              className="bg-[#e85d00] hover:bg-[#d45500] text-white font-semibold uppercase tracking-wide px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Link href="#contacto">Solicitar cotización</Link>
             </Button>
@@ -60,7 +60,7 @@ export default function Hero() {
               asChild
               size="lg"
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#1a2332] font-semibold uppercase tracking-wide px-8 py-6 text-base bg-transparent"
+              className="border-2 border-white/80 text-white hover:bg-white hover:text-[#1a2332] font-semibold uppercase tracking-wide px-8 py-6 text-base bg-transparent transition-all duration-300"
             >
               <Link href="#servicios">Ver servicios</Link>
             </Button>
@@ -71,12 +71,12 @@ export default function Hero() {
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="bg-[#263547] rounded-lg p-5 text-center"
+                className="bg-[#263547] rounded-lg p-5 text-center border border-[#3a4a5f]/50 hover:border-[#e85d00]/30 transition-all duration-300"
               >
                 <div className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl font-bold text-[#e85d00] mb-1">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 text-sm">
+                <div className="text-gray-400 text-sm font-medium">
                   {stat.label}
                 </div>
               </div>
