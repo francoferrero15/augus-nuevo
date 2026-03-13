@@ -1,43 +1,120 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Award, Users, Leaf, Clock } from 'lucide-react'
+"use client"
+
+import { Building2, FileText, Truck } from "lucide-react"
 
 export default function About() {
-  return (
-    <section id="nosotros" className="py-16 bg-gradient-to-br from-gray-700 via-gray-600 to-green-700">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl font-bold text-white mb-6">Sobre R.A.G</h2>
-            <p className="text-lg text-white mb-6">
-              Con más de 10 años de experiencia en el sector del reciclaje industrial en Buenos Aires, somos líderes en 
-              la gestión integral de residuos industriales y desguace de vehículos. Nos especializamos en brindar 
-              soluciones sustentables y responsables para la valorización de chatarra metálica y residuos empresariales.
-            </p>
-            <p className="text-white mb-8">
-              Nuestro compromiso con la economía circular y la gestión ambiental certificada nos ha posicionado como 
-              referentes en la industria del reciclaje en Argentina, trabajando con las principales empresas del país 
-              en la transformación de residuos en oportunidades de valor.
-            </p>
-          </div>
+  const features = [
+    {
+      title: "Equipamiento especializado",
+      description: "Camiones, hidrogrúas, prensas móviles y equipos Roll Off/On propios."
+    },
+    {
+      title: "Auditorías de clientes",
+      description: "Aceptamos auditorías de clientes para verificar nuestros procesos y operatoria."
+    },
+    {
+      title: "Certificados privados",
+      description: "Emitimos certificados de disposición final, tratamiento y trazabilidad de forma privada."
+    },
+    {
+      title: "Scrap mixto aceptado",
+      description: "Recibimos todos los tipos de metales y materiales mixtos en cualquier estado."
+    }
+  ]
 
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { icon: Award, title: "Certificación ISO 14001", desc: "Gestión ambiental certificada" },
-              { icon: Users, title: "Equipo Especializado", desc: "Profesionales en reciclaje industrial" },
-              { icon: Leaf, title: "Procesos Sustentables", desc: "Economía circular y eco-friendly" },
-              { icon: Clock, title: "Servicio 24/7", desc: "Disponibilidad total para empresas" },
-            ].map((item, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20">
-                <CardContent className="p-4 text-center">
-                  <item.icon className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                  <h3 className="font-semibold text-white text-sm">{item.title}</h3>
-                  <p className="text-xs text-gray-300">{item.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
+  const reasons = [
+    {
+      icon: Building2,
+      title: "25 años de trayectoria",
+      description: "Experiencia comprobada en el sector industrial argentino."
+    },
+    {
+      icon: FileText,
+      title: "Documentación completa",
+      description: "Certificados de disposición final y trazabilidad para cumplimiento corporativo."
+    },
+    {
+      icon: Truck,
+      title: "Logística integral",
+      description: "Retiro en planta con flota propia: Roll Off/On, hidrogrúas y semirremolques."
+    }
+  ]
+
+  return (
+    <div className="bg-[#f4f5f6] py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Left Column */}
+          <div>
+            {/* Section Label */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-0.5 bg-[#e85d00]"></div>
+              <span className="text-[#e85d00] font-semibold uppercase text-sm tracking-wide">
+                Quiénes somos
+              </span>
+            </div>
+            
+            {/* Heading */}
+            <h2 className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2332] uppercase mb-6">
+              Metal Solver:{" "}
+              <span className="text-[#e85d00]">25 años</span>{" "}
+              en gestión de scrap
+            </h2>
+            
+            {/* Body Text */}
+            <p className="text-gray-600 text-lg leading-relaxed mb-10">
+              Somos una empresa argentina especializada en la comercialización, gestión integral, 
+              valorización y destrucción certificada de scrap metálico. Ubicados en Av. Monteverde 2191, 
+              San Francisco Solano, Quilmes, operamos con flota propia y equipamiento especializado 
+              para dar respuesta eficiente a grandes volúmenes industriales.
+            </p>
+            
+            {/* Feature Cards */}
+            <div className="space-y-4">
+              {features.map((feature, index) => (
+                <div 
+                  key={index}
+                  className="bg-white rounded-lg p-5 border-l-4 border-[#e85d00] shadow-sm"
+                >
+                  <h3 className="font-[family-name:var(--font-barlow-condensed)] text-lg font-semibold text-[#1a2332] uppercase mb-1">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Right Column - Sticky Card */}
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <div className="bg-[#1a2332] rounded-xl p-8 md:p-10">
+              <h3 className="font-[family-name:var(--font-barlow-condensed)] text-2xl md:text-3xl font-bold text-white uppercase mb-8">
+                ¿Por qué elegirnos?
+              </h3>
+              
+              <div className="space-y-8">
+                {reasons.map((reason, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-[#e85d00] rounded-lg flex items-center justify-center">
+                      <reason.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-[family-name:var(--font-barlow-condensed)] text-lg font-semibold text-white uppercase mb-1">
+                        {reason.title}
+                      </h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {reason.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

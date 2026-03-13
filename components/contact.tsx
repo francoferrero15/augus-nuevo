@@ -1,25 +1,36 @@
 "use client"
 
 import { useState } from "react"
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
+    nombre: "",
+    empresa: "",
+    telefono: "",
     email: "",
-    message: "",
+    tipoMaterial: "",
+    volumen: "",
+    mensaje: ""
   })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const whatsappMessage = `Hola! Soy ${formData.name}. ${formData.message}. Mi teléfono: ${formData.phone}, Email: ${formData.email}`
+    const whatsappMessage = `Hola! Soy ${formData.nombre} de ${formData.empresa}. 
+    
+Consulta: ${formData.mensaje}
+
+Tipo de material: ${formData.tipoMaterial}
+Volumen estimado: ${formData.volumen}
+Teléfono: ${formData.telefono}
+Email: ${formData.email}`
+    
     const encodedMessage = encodeURIComponent(whatsappMessage)
-    window.open(`https://wa.me/1154852128?text=${encodedMessage}`, "_blank")
+    window.open(`https://wa.me/5491154852128?text=${encodedMessage}`, "_blank")
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,170 +40,213 @@ export default function Contact() {
     })
   }
 
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Teléfono",
+      value: "+54 11 5485-2128",
+      link: "tel:+5491154852128"
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      value: "Augustoguilhou@hotmail.com",
+      link: "mailto:Augustoguilhou@hotmail.com"
+    },
+    {
+      icon: MapPin,
+      title: "Ubicación",
+      value: "Av. Monteverde 2191, San Francisco Solano, Quilmes",
+      link: null
+    },
+    {
+      icon: Clock,
+      title: "Horario",
+      value: "Lun–Vie 8:00–18:00",
+      link: null
+    }
+  ]
+
   return (
-    <section id="contacto" className="py-16 bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Contactanos</h2>
-          <p className="text-xl text-gray-300">
-            Estamos aquí para ayudarte con todas tus necesidades de reciclaje industrial en Buenos Aires
+    <div className="bg-[#f4f5f6] py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Section Header */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-0.5 bg-[#e85d00]"></div>
+            <span className="text-[#e85d00] font-semibold uppercase text-sm tracking-wide">
+              Contacto
+            </span>
+          </div>
+          <h2 className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2332] uppercase mb-4">
+            Solicitar <span className="text-[#e85d00]">cotización</span>
+          </h2>
+          <p className="text-gray-600 text-lg">
+            Completá el formulario o contactanos directamente. Respondemos en menos de 24 horas.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Información de contacto */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-8">Información de Contacto</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="bg-green-600 p-3 rounded-full">
-                  <Phone className="w-6 h-6 text-white" />
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Left - Contact Info Card */}
+          <div className="bg-[#1a2332] rounded-xl p-8 md:p-10">
+            <div className="space-y-6 mb-10">
+              {contactInfo.map((info, index) => (
+                <div key={index} className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#e85d00] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <info.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">{info.title}</h4>
+                    {info.link ? (
+                      <a href={info.link} className="text-gray-400 hover:text-[#e85d00] transition-colors">
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="text-gray-400">{info.value}</p>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Teléfono</h4>
-                  <p className="text-gray-300">+54 11 5485-2128</p>
-                  <p className="text-sm text-gray-400">Línea directa para cotizaciones</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-green-600 p-3 rounded-full">
-                  <Mail className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Email</h4>
-                  <p className="text-gray-300">info@rag.com.ar</p>
-                  <p className="text-sm text-gray-400">Respuesta en menos de 24hs</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-green-600 p-3 rounded-full">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Ubicación</h4>
-                  <p className="text-gray-300">Buenos Aires, Argentina</p>
-                  <p className="text-sm text-gray-400">Cobertura en toda la región metropolitana</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-green-600 p-3 rounded-full">
-                  <Clock className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Horarios</h4>
-                  <p className="text-gray-300">Lunes a Viernes: 8:00 - 18:00</p>
-                  <p className="text-sm text-gray-400">Emergencias 24/7 disponibles</p>
-                </div>
-              </div>
+              ))}
             </div>
 
-            {/* WhatsApp directo */}
-            <Card className="mt-8 bg-green-600">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <MessageCircle className="w-6 h-6 text-white mr-3" />
-                  <h4 className="text-lg font-bold text-white">WhatsApp Directo</h4>
-                </div>
-                <p className="text-white mb-4">
-                  ¿Necesitas una cotización rápida? Contáctanos directamente por WhatsApp para respuesta inmediata
-                </p>
-                <Button
-                  onClick={() => window.open("https://wa.me/1154852128", "_blank")}
-                  className="w-full bg-white text-green-600 hover:bg-gray-100 font-semibold"
-                >
-                  Abrir WhatsApp
-                </Button>
-              </CardContent>
-            </Card>
+            {/* WhatsApp Button */}
+            <Button
+              onClick={() => window.open("https://wa.me/5491154852128", "_blank")}
+              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold py-6 text-base"
+            >
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Contactar por WhatsApp
+            </Button>
           </div>
 
-          {/* Formulario de contacto */}
-          <div>
-            <Card className="bg-gray-800 border-gray-700">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Envíanos un Mensaje</h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                        Nombre *
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                        placeholder="Tu nombre completo"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                        Teléfono *
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                        placeholder="Tu número de teléfono"
-                      />
-                    </div>
-                  </div>
+          {/* Right - Contact Form */}
+          <div className="bg-white rounded-xl p-8 md:p-10 shadow-sm">
+            <div className="mb-6 pb-4 border-b-2 border-[#e85d00]">
+              <h3 className="font-[family-name:var(--font-barlow-condensed)] text-2xl font-bold text-[#1a2332] uppercase">
+                Envianos tu consulta
+              </h3>
+            </div>
 
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Email *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                      placeholder="tu@email.com"
-                    />
-                  </div>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Nombre *
+                  </label>
+                  <Input
+                    name="nombre"
+                    required
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    placeholder="Tu nombre"
+                    className="border-gray-300"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Empresa *
+                  </label>
+                  <Input
+                    name="empresa"
+                    required
+                    value={formData.empresa}
+                    onChange={handleChange}
+                    placeholder="Nombre de tu empresa"
+                    className="border-gray-300"
+                  />
+                </div>
+              </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                      Mensaje *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                      placeholder="Cuéntanos sobre tu proyecto o consulta..."
-                    />
-                  </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Teléfono *
+                  </label>
+                  <Input
+                    name="telefono"
+                    type="tel"
+                    required
+                    value={formData.telefono}
+                    onChange={handleChange}
+                    placeholder="Tu teléfono"
+                    className="border-gray-300"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email *
+                  </label>
+                  <Input
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="tu@email.com"
+                    className="border-gray-300"
+                  />
+                </div>
+              </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg font-semibold"
-                  >
-                    Enviar Mensaje por WhatsApp
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Tipo de material
+                </label>
+                <Select 
+                  value={formData.tipoMaterial} 
+                  onValueChange={(value) => setFormData({ ...formData, tipoMaterial: value })}
+                >
+                  <SelectTrigger className="border-gray-300">
+                    <SelectValue placeholder="Seleccionar tipo de material" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="ferrosos">Ferrosos</SelectItem>
+                    <SelectItem value="no-ferrosos">No ferrosos</SelectItem>
+                    <SelectItem value="scrap-mixto">Scrap mixto</SelectItem>
+                    <SelectItem value="maquinaria">Maquinaria</SelectItem>
+                    <SelectItem value="otro">Otro</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Volumen estimado
+                </label>
+                <Input
+                  name="volumen"
+                  value={formData.volumen}
+                  onChange={handleChange}
+                  placeholder="Ej: 500 kg, 2 toneladas, etc."
+                  className="border-gray-300"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Mensaje *
+                </label>
+                <Textarea
+                  name="mensaje"
+                  required
+                  value={formData.mensaje}
+                  onChange={handleChange}
+                  rows={4}
+                  placeholder="Contanos sobre tu consulta..."
+                  className="border-gray-300"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full bg-[#e85d00] hover:bg-[#d45500] text-white font-semibold uppercase tracking-wide py-6 text-base"
+              >
+                Enviar consulta
+              </Button>
+            </form>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
