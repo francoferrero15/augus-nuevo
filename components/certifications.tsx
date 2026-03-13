@@ -16,14 +16,14 @@ export default function Certifications() {
       title: "Auditorías de clientes",
       description: "Aceptamos auditorías por parte de los clientes para verificar nuestra operatoria, equipamiento e instalaciones.",
       icon: Check,
-      iconBg: "bg-[#e85d00]"
+      iconBg: "bg-[#059669]"
     },
     {
       label: "DOC",
       title: "Certificados privados",
       description: "Emitimos certificados de disposición final, tratamiento y trazabilidad de forma privada (no bajo resolución OPDS).",
       icon: FileText,
-      iconBg: "bg-[#e85d00]"
+      iconBg: "bg-[#059669]"
     }
   ]
 
@@ -33,7 +33,7 @@ export default function Certifications() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase mb-4">
-            Transparencia y <span className="text-[#e85d00]">confianza</span> operativa
+            Transparencia y <span className="text-[#059669]">confianza</span> operativa
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             Conocé los detalles de nuestra operatoria para evaluar si se ajusta a los requerimientos de tu empresa.
@@ -49,7 +49,7 @@ export default function Certifications() {
             >
               {/* Label */}
               <div className="mb-6">
-                <span className="font-[family-name:var(--font-barlow-condensed)] text-4xl md:text-5xl font-bold text-[#e85d00] group-hover:scale-110 inline-block transition-transform duration-300">
+                <span className="font-[family-name:var(--font-barlow-condensed)] text-4xl md:text-5xl font-bold text-[#059669] group-hover:scale-110 inline-block transition-transform duration-300">
                   {cert.label}
                 </span>
               </div>

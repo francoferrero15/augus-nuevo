@@ -20,7 +20,7 @@ export default function Footer() {
               <span className="font-[family-name:var(--font-barlow-condensed)] text-2xl font-bold text-white tracking-tight">
                 METAL SOLVER
               </span>
-              <span className="w-2 h-2 rounded-full bg-[#e85d00] mb-3"></span>
+              <span className="w-2 h-2 rounded-full bg-[#059669] mb-3"></span>
             </Link>
             <p className="text-gray-400 leading-relaxed">
               Empresa argentina con 25 años de trayectoria en gestión, valorización 
@@ -38,7 +38,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link 
                     href="#servicios" 
-                    className="text-gray-400 hover:text-[#e85d00] transition-colors duration-200 hover:translate-x-1 inline-block"
+                    className="text-gray-400 hover:text-[#059669] transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {service}
                   </Link>
@@ -55,14 +55,14 @@ export default function Footer() {
             <div className="space-y-4">
               <a 
                 href="tel:+5491154852128" 
-                className="flex items-center gap-3 text-gray-400 hover:text-[#e85d00] transition-colors duration-200 group"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#059669] transition-colors duration-200 group"
               >
                 <Phone className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
                 <span>+54 11 5485-2128</span>
               </a>
               <a 
                 href="mailto:Augustoguilhou@hotmail.com" 
-                className="flex items-center gap-3 text-gray-400 hover:text-[#e85d00] transition-colors duration-200 group"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#059669] transition-colors duration-200 group"
               >
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
                 <span>Augustoguilhou@hotmail.com</span>

@@ -5,8 +5,8 @@
 
 :root {
   /* Metal Solver Brand Colors */
-  --orange: #e85d00;
-  --orange-hover: #d45500;
+  --green: #059669;
+  --green-hover: #047857;
   --steel-dark: #1a2332;
   --steel-mid: #263547;
   --light-bg: #f4f5f6;
@@ -19,19 +19,19 @@
   --card-foreground: #1a2332;
   --popover: #ffffff;
   --popover-foreground: #1a2332;
-  --primary: #e85d00;
+  --primary: #059669;
   --primary-foreground: #ffffff;
   --secondary: #1a2332;
   --secondary-foreground: #ffffff;
   --muted: #f4f5f6;
   --muted-foreground: #6b7280;
-  --accent: #e85d00;
+  --accent: #059669;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #e85d00;
+  --ring: #059669;
   --radius: 0.5rem;
 }
 
@@ -39,8 +39,8 @@
   --font-sans: 'Barlow', sans-serif;
   --font-heading: 'Barlow Condensed', sans-serif;
   
-  --color-orange: var(--orange);
-  --color-orange-hover: var(--orange-hover);
+  --color-green: var(--green);
+  --color-green-hover: var(--green-hover);
   --color-steel-dark: var(--steel-dark);
   --color-steel-mid: var(--steel-mid);
   --color-light-bg: var(--light-bg);
@@ -97,12 +97,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e85d00;
+  background: #059669;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d45500;
+  background: #047857;
 }
 
 /* Industrial grid pattern for hero */
@@ -160,12 +160,12 @@ html {
 
 /* Subtle text selection */
 ::selection {
-  background-color: #e85d00;
+  background-color: #059669;
   color: white;
 }
 
 /* Focus states for accessibility */
 *:focus-visible {
-  outline: 2px solid #e85d00;
+  outline: 2px solid #059669;
   outline-offset: 2px;
 }

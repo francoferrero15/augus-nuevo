@@ -48,18 +48,18 @@ export default function Services() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-0.5 bg-[#e85d00]"></div>
-              <span className="text-[#e85d00] font-semibold uppercase text-sm tracking-wide">
+              <div className="w-8 h-0.5 bg-[#059669]"></div>
+              <span className="text-[#059669] font-semibold uppercase text-sm tracking-wide">
                 Nuestros servicios
               </span>
             </div>
             <h2 className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2332] uppercase">
-              Soluciones <span className="text-[#e85d00]">integrales</span> para tu empresa
+              Soluciones <span className="text-[#059669]">integrales</span> para tu empresa
             </h2>
           </div>
           <Button 
             asChild
-            className="bg-[#e85d00] hover:bg-[#d45500] text-white font-semibold uppercase tracking-wide px-8 w-fit"
+            className="bg-[#059669] hover:bg-[#047857] text-white font-semibold uppercase tracking-wide px-8 w-fit"
           >
             <Link href="#contacto">Solicitar cotización</Link>
           </Button>
@@ -74,7 +74,7 @@ export default function Services() {
             >
               {/* Card Header */}
               <div className="bg-[#1a2332] p-6 flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#e85d00] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-12 h-12 bg-[#059669] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-[family-name:var(--font-barlow-condensed)] text-xl font-bold text-white uppercase leading-tight">
@@ -90,7 +90,7 @@ export default function Services() {
                 <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-3 text-gray-700">
-                      <span className="w-2 h-2 bg-[#e85d00] rounded-full flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#059669] rounded-full flex-shrink-0"></span>
                       <span className="text-sm font-medium">{feature}</span>
                     </li>
                   ))}

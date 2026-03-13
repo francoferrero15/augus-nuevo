@@ -48,8 +48,8 @@ export default function About() {
           <div>
             {/* Section Label */}
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-0.5 bg-[#e85d00]"></div>
-              <span className="text-[#e85d00] font-semibold uppercase text-sm tracking-wide">
+              <div className="w-8 h-0.5 bg-[#059669]"></div>
+              <span className="text-[#059669] font-semibold uppercase text-sm tracking-wide">
                 Quiénes somos
               </span>
             </div>
@@ -57,7 +57,7 @@ export default function About() {
             {/* Heading */}
             <h2 className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2332] uppercase mb-6">
               Metal Solver:{" "}
-              <span className="text-[#e85d00]">25 años</span>{" "}
+              <span className="text-[#059669]">25 años</span>{" "}
               en gestión de scrap
             </h2>
             
@@ -74,7 +74,7 @@ export default function About() {
               {features.map((feature, index) => (
                 <div 
                   key={index}
-                  className="bg-white rounded-lg p-5 border-l-4 border-[#e85d00] shadow-sm hover:shadow-md transition-shadow duration-300"
+                  className="bg-white rounded-lg p-5 border-l-4 border-[#059669] shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
                   <h3 className="font-[family-name:var(--font-barlow-condensed)] text-lg font-semibold text-[#1a2332] uppercase mb-2">
                     {feature.title}
@@ -91,7 +91,7 @@ export default function About() {
           <div className="lg:sticky lg:top-32 lg:self-start">
             <div className="bg-[#1a2332] rounded-xl p-8 md:p-10 shadow-xl">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-1 h-8 bg-[#e85d00] rounded-full"></div>
+                <div className="w-1 h-8 bg-[#059669] rounded-full"></div>
                 <h3 className="font-[family-name:var(--font-barlow-condensed)] text-2xl md:text-3xl font-bold text-white uppercase">
                   ¿Por qué elegirnos?
                 </h3>
@@ -100,7 +100,7 @@ export default function About() {
               <div className="space-y-6">
                 {reasons.map((reason, index) => (
                   <div key={index} className="flex gap-4 group">
-                    <div className="flex-shrink-0 w-12 h-12 bg-[#e85d00] rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+                    <div className="flex-shrink-0 w-12 h-12 bg-[#059669] rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
                       <reason.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>

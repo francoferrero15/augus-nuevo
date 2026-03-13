@@ -14,14 +14,14 @@ export default function Hero() {
   return (
     <div className="relative min-h-screen bg-[#1a2332] overflow-hidden">
       {/* Orange top border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-[#e85d00]"></div>
+      <div className="absolute top-0 left-0 right-0 h-1 bg-[#059669]"></div>
       
       {/* Industrial grid pattern */}
       <div className="absolute inset-0 industrial-pattern"></div>
       
       {/* Diagonal orange accent */}
       <div 
-        className="absolute top-0 right-0 w-1/3 h-full bg-[#e85d00]/10 hidden lg:block"
+        className="absolute top-0 right-0 w-1/3 h-full bg-[#059669]/10 hidden lg:block"
         style={{ clipPath: "polygon(30% 0, 100% 0, 100% 100%, 0% 100%)" }}
       ></div>
       
@@ -30,14 +30,14 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-[#263547] rounded-full px-4 py-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#e85d00]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#059669]"></span>
             <span className="text-gray-300 text-sm">25 años en el mercado · Buenos Aires</span>
           </div>
           
           {/* Heading */}
           <h1 className="font-[family-name:var(--font-barlow-condensed)] text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white uppercase leading-tight mb-6">
             Gestión integral de{" "}
-            <span className="text-[#e85d00]">scrap metálico</span>{" "}
+            <span className="text-[#059669]">scrap metálico</span>{" "}
             industrial
           </h1>
           
@@ -52,7 +52,7 @@ export default function Hero() {
             <Button 
               asChild
               size="lg"
-              className="bg-[#e85d00] hover:bg-[#d45500] text-white font-semibold uppercase tracking-wide px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-[#059669] hover:bg-[#047857] text-white font-semibold uppercase tracking-wide px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Link href="#contacto">Solicitar cotización</Link>
             </Button>
@@ -71,9 +71,9 @@ export default function Hero() {
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="bg-[#263547] rounded-lg p-5 text-center border border-[#3a4a5f]/50 hover:border-[#e85d00]/30 transition-all duration-300"
+                className="bg-[#263547] rounded-lg p-5 text-center border border-[#3a4a5f]/50 hover:border-[#059669]/30 transition-all duration-300"
               >
-                <div className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl font-bold text-[#e85d00] mb-1">
+                <div className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl font-bold text-[#059669] mb-1">
                   {stat.value}
                 </div>
                 <div className="text-gray-400 text-sm font-medium">
@@ -86,7 +86,7 @@ export default function Hero() {
       </div>
       
       {/* Orange bottom line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#e85d00]"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#059669]"></div>
     </div>
   )
 }

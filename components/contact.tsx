@@ -73,13 +73,13 @@ Email: ${formData.email}`
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-0.5 bg-[#e85d00]"></div>
-            <span className="text-[#e85d00] font-semibold uppercase text-sm tracking-wide">
+            <div className="w-8 h-0.5 bg-[#059669]"></div>
+            <span className="text-[#059669] font-semibold uppercase text-sm tracking-wide">
               Contacto
             </span>
           </div>
           <h2 className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2332] uppercase mb-4">
-            Solicitar <span className="text-[#e85d00]">cotización</span>
+            Solicitar <span className="text-[#059669]">cotización</span>
           </h2>
           <p className="text-gray-600 text-lg">
             Completá el formulario o contactanos directamente. Respondemos en menos de 24 horas.
@@ -92,13 +92,13 @@ Email: ${formData.email}`
             <div className="space-y-6 mb-10">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start gap-4 group">
-                  <div className="w-12 h-12 bg-[#e85d00] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
+                  <div className="w-12 h-12 bg-[#059669] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
                     <info.icon className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">{info.title}</h4>
                     {info.link ? (
-                      <a href={info.link} className="text-gray-400 hover:text-[#e85d00] transition-colors duration-200">
+                      <a href={info.link} className="text-gray-400 hover:text-[#059669] transition-colors duration-200">
                         {info.value}
                       </a>
                     ) : (
@@ -121,7 +121,7 @@ Email: ${formData.email}`
 
           {/* Right - Contact Form */}
           <div className="bg-white rounded-xl p-8 md:p-10 shadow-lg">
-            <div className="mb-6 pb-4 border-b-2 border-[#e85d00]">
+            <div className="mb-6 pb-4 border-b-2 border-[#059669]">
               <h3 className="font-[family-name:var(--font-barlow-condensed)] text-2xl font-bold text-[#1a2332] uppercase">
                 Envianos tu consulta
               </h3>
@@ -239,7 +239,7 @@ Email: ${formData.email}`
 
               <Button
                 type="submit"
-                className="w-full bg-[#e85d00] hover:bg-[#d45500] text-white font-semibold uppercase tracking-wide py-6 text-base shadow-md hover:shadow-lg transition-all duration-300"
+                className="w-full bg-[#059669] hover:bg-[#047857] text-white font-semibold uppercase tracking-wide py-6 text-base shadow-md hover:shadow-lg transition-all duration-300"
               >
                 Enviar consulta
               </Button>
