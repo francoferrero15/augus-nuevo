@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Send, CheckCircle, Loader2 } from 'lucide-react'
+import { ArrowRight, CheckCircle, Loader2 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 
 export default function Hero() {
@@ -127,9 +127,9 @@ export default function Hero() {
                 <span className="font-medium">Recibimos tu consulta. Te contactamos pronto.</span>
               </div>
             ) : (
-              <form onSubmit={handleQuickSubmit} className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-1 flex items-center bg-white/10 border border-white/20 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-green-500 focus-within:border-green-500">
-                  <div className="flex items-center gap-2 px-3 py-2 text-white/80 border-r border-white/20 bg-white/5">
+              <form onSubmit={handleQuickSubmit} className="flex">
+                <div className="flex-1 flex items-center bg-white/10 border border-white/20 rounded-l-lg overflow-hidden focus-within:ring-2 focus-within:ring-green-500 focus-within:border-green-500">
+                  <div className="flex items-center gap-2 px-3 py-3 text-white/80 border-r border-white/20 bg-white/5">
                     <span>🇦🇷</span>
                     <span className="text-sm font-medium">+54</span>
                   </div>
@@ -138,21 +138,21 @@ export default function Hero() {
                     placeholder="Tu número de teléfono"
                     value={telefono}
                     onChange={(e) => setTelefono(e.target.value)}
-                    className="flex-1 bg-transparent px-3 py-2 text-white placeholder:text-white/50 outline-none"
+                    className="flex-1 bg-transparent px-3 py-3 text-white placeholder:text-white/50 outline-none"
                     disabled={isSubmitting}
                   />
                 </div>
                 <Button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 transition-all duration-300"
+                  className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-l-none rounded-r-lg transition-all duration-300 whitespace-nowrap"
                 >
                   {isSubmitting ? (
                     <Loader2 className="h-5 w-5 animate-spin" />
                   ) : (
                     <>
-                      <Send className="h-4 w-4 mr-2" />
-                      Enviar
+                      Que me llamen
+                      <ArrowRight className="h-4 w-4 ml-2" />
                     </>
                   )}
                 </Button>
