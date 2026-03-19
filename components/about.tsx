@@ -1,103 +1,128 @@
-"use client"
+'use client'
 
-import Image from "next/image"
-import { CheckCircle2, Leaf, Award, Users } from "lucide-react"
+import { Button } from '@/components/ui/button'
+import { CheckCircle, Award, Truck, Recycle } from 'lucide-react'
 
 export default function About() {
-  const features = [
-    {
-      icon: Leaf,
-      title: "Compromiso ambiental",
-      description: "Reciclamos de manera responsable, reduciendo el impacto ambiental y promoviendo la economía circular."
-    },
-    {
-      icon: Award,
-      title: "Calidad garantizada",
-      description: "Procesamos materiales bajo estrictos estándares de calidad para garantizar la satisfacción de nuestros clientes."
-    },
-    {
-      icon: Users,
-      title: "Atención personalizada",
-      description: "Brindamos un servicio cercano y profesional, adaptándonos a las necesidades de cada cliente."
-    }
-  ]
-
-  const benefits = [
-    "Mejor precio del mercado",
-    "Retiro sin costo en zona",
-    "Pago inmediato",
-    "Pesaje certificado",
-    "Facturación legal",
-    "Servicio 24/7 disponible"
-  ]
+  const scrollToContact = () => {
+    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
-    <section id="nosotros" className="py-20 bg-gray-50">
+    <section id="nosotros" className="py-20 bg-slate-800">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image Side */}
-          <div className="relative">
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/placeholder.jpg"
-                alt="Instalaciones de R.A.G"
-                fill
-                className="object-cover"
-              />
-            </div>
-            {/* Floating Card */}
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 max-w-xs hidden lg:block">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-bold text-emerald-600">25+</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">Años de experiencia</p>
-                  <p className="text-sm text-gray-600">en el mercado argentino</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Content Side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Contenido de texto */}
           <div>
-            <span className="text-emerald-600 font-semibold uppercase tracking-wide">Sobre nosotros</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
-              Líderes en reciclaje de metales en Buenos Aires
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm mb-6">
+              <span className="text-green-300 text-sm font-medium">🏭 Sobre Nosotros</span>
+            </div>
+            
+            <h2 className="text-4xl font-bold text-white mb-6 leading-tight">
+              Más de 10 años transformando 
+              <span className="text-green-400"> residuos en recursos</span>
             </h2>
-            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-              En R.A.G nos especializamos en la compra y reciclaje de chatarra metálica. 
-              Con más de 25 años de experiencia, somos tu mejor opción para convertir tus 
-              materiales en valor mientras contribuyes al cuidado del medio ambiente.
+            
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              R.A.G es una empresa líder en reciclado de chatarra y desguace industrial en Buenos Aires. 
+              Nos especializamos en la compra, procesamiento y reciclaje responsable de metales ferrosos y no ferrosos.
             </p>
 
-            {/* Features */}
-            <div className="space-y-6 mb-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="h-6 w-6 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{feature.title}</h3>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
-                  </div>
+            {/* Lista de características */}
+            <div className="space-y-4 mb-8">
+              <div className="flex items-start space-x-3">
+                <CheckCircle className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Experiencia Comprobada</h4>
+                  <p className="text-gray-300 text-sm">Más de una década en el sector del reciclaje industrial</p>
                 </div>
-              ))}
-            </div>
-
-            {/* Benefits List */}
-            <div className="bg-gray-100 rounded-xl p-6">
-              <h4 className="font-semibold text-gray-900 mb-4">Beneficios de trabajar con nosotros:</h4>
-              <div className="grid grid-cols-2 gap-3">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm">{benefit}</span>
-                  </div>
-                ))}
+              </div>
+              
+              <div className="flex items-start space-x-3">
+                <CheckCircle className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Certificación Ambiental</h4>
+                  <p className="text-gray-300 text-sm">Procesos certificados ISO 14001 para gestión ambiental</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-3">
+                <CheckCircle className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Logística Integral</h4>
+                  <p className="text-gray-300 text-sm">Flota propia y servicio completo de retiro y transporte</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-3">
+                <CheckCircle className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Mejores Precios</h4>
+                  <p className="text-gray-300 text-sm">Cotizaciones competitivas para todos los tipos de metales</p>
+                </div>
               </div>
             </div>
+
+            <Button 
+              onClick={scrollToContact}
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            >
+              Solicitar Cotización
+            </Button>
+          </div>
+
+          {/* Grid de características visuales */}
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white">
+              <Award className="h-12 w-12 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Certificación ISO</h3>
+              <p className="text-green-100 text-sm">
+                Gestión ambiental certificada para reciclaje responsable
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl p-6 text-white border border-slate-500">
+              <Truck className="h-12 w-12 mb-4 text-green-400" />
+              <h3 className="text-xl font-bold mb-2">Logística Propia</h3>
+              <p className="text-gray-300 text-sm">
+                Flota especializada para retiro y transporte de materiales
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl p-6 text-white border border-slate-500">
+              <Recycle className="h-12 w-12 mb-4 text-green-400" />
+              <h3 className="text-xl font-bold mb-2">Reciclaje Total</h3>
+              <p className="text-gray-300 text-sm">
+                Procesamiento completo de metales ferrosos y no ferrosos
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white">
+              <div className="text-3xl font-bold mb-2">24/7</div>
+              <h3 className="text-xl font-bold mb-2">Disponibilidad</h3>
+              <p className="text-green-100 text-sm">
+                Servicio continuo para atender tus necesidades
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Sección de misión y visión */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-slate-700 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-4">Nuestra Misión</h3>
+            <p className="text-gray-300 leading-relaxed">
+              Transformar residuos metálicos en recursos valiosos a través de procesos de reciclaje responsables, 
+              contribuyendo a la economía circular y la preservación del medio ambiente en Buenos Aires.
+            </p>
+          </div>
+
+          <div className="bg-slate-700 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-4">Nuestra Visión</h3>
+            <p className="text-gray-300 leading-relaxed">
+              Ser la empresa líder en reciclado de chatarra en Argentina, reconocida por nuestra excelencia operativa, 
+              compromiso ambiental y contribución al desarrollo sostenible de la industria.
+            </p>
           </div>
         </div>
       </div>

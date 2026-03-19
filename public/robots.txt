@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://metalsolversrl.com.ar/sitemap.xml
+Sitemap: https://rag.com.ar/sitemap.xml
