@@ -134,7 +134,7 @@ export default function Hero() {
               <span className="font-medium">Te contactamos pronto.</span>
             </div>
           ) : (
-            <form onSubmit={handleQuickSubmit} className={`flex rounded-full overflow-hidden border border-white/30 bg-white/10 backdrop-blur-md transition-all ${shake ? 'animate-shake border-red-400/50' : ''}`}>
+            <form onSubmit={handleQuickSubmit} className={`flex rounded-full overflow-hidden border border-white/30 bg-white/10 backdrop-blur-md ${shake ? 'animate-shake' : ''}`}>
               <div className="flex items-center gap-2 pl-4 pr-3 py-3 text-white border-r border-white/30 bg-white/5">
                 <span>🇦🇷</span>
                 <span className="text-sm font-medium">+54</span>
