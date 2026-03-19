@@ -1,15 +1,56 @@
 'use client'
 
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
+import { Input } from '@/components/ui/input'
+import { ArrowRight, Send, CheckCircle, Loader2 } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
 
 export default function Hero() {
+  const [formData, setFormData] = useState({ nombre: '', telefono: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState('')
+
   const scrollToContact = () => {
     document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const scrollToServices = () => {
     document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleQuickSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError('')
+    
+    if (!formData.nombre.trim() || !formData.telefono.trim()) {
+      setError('Por favor completá todos los campos')
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const supabase = createClient()
+      const { error: dbError } = await supabase.from('contacts').insert({
+        nombre: formData.nombre,
+        telefono: formData.telefono,
+        mensaje: 'Lead rápido desde Hero'
+      })
+
+      if (dbError) throw dbError
+
+      setIsSubmitted(true)
+      setFormData({ nombre: '', telefono: '' })
+      
+      // Reset success state after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000)
+    } catch {
+      setError('Error al enviar. Intentá de nuevo.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -55,7 +96,7 @@ export default function Hero() {
         </p>
 
         {/* Botones de acción */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <Button 
             onClick={scrollToContact}
             size="lg" 
@@ -72,6 +113,59 @@ export default function Hero() {
           >
             Ver Servicios
           </Button>
+        </div>
+
+        {/* Mini formulario de captura de leads */}
+        <div className="max-w-xl mx-auto mb-16">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <p className="text-white/90 text-sm mb-4 font-medium">
+              Dejanos tus datos y te contactamos en menos de 24hs
+            </p>
+            
+            {isSubmitted ? (
+              <div className="flex items-center justify-center gap-2 py-4 text-green-400">
+                <CheckCircle className="h-5 w-5" />
+                <span className="font-medium">Recibimos tu consulta. Te contactamos pronto.</span>
+              </div>
+            ) : (
+              <form onSubmit={handleQuickSubmit} className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="text"
+                  placeholder="Tu nombre"
+                  value={formData.nombre}
+                  onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                  className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:ring-green-500 focus:border-green-500"
+                  disabled={isSubmitting}
+                />
+                <Input
+                  type="tel"
+                  placeholder="Tu teléfono"
+                  value={formData.telefono}
+                  onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
+                  className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:ring-green-500 focus:border-green-500"
+                  disabled={isSubmitting}
+                />
+                <Button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 transition-all duration-300"
+                >
+                  {isSubmitting ? (
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  ) : (
+                    <>
+                      <Send className="h-4 w-4 mr-2" />
+                      Enviar
+                    </>
+                  )}
+                </Button>
+              </form>
+            )}
+            
+            {error && (
+              <p className="text-red-400 text-sm mt-2">{error}</p>
+            )}
+          </div>
         </div>
 
         {/* Tarjetas de características */}
