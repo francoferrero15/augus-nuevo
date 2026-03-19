@@ -115,54 +115,50 @@ export default function Hero() {
         </div>
 
         {/* Mini formulario de captura de leads */}
-        <div className="max-w-xl mx-auto mb-16">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <p className="text-white/90 text-sm mb-4 font-medium">
-              Dejanos tus datos y te contactamos en menos de 24hs
-            </p>
-            
-            {isSubmitted ? (
-              <div className="flex items-center justify-center gap-2 py-4 text-green-400">
-                <CheckCircle className="h-5 w-5" />
-                <span className="font-medium">Recibimos tu consulta. Te contactamos pronto.</span>
+        <div className="max-w-[480px] mx-auto mb-16">
+          <p className="text-white/90 text-sm mb-3 font-medium">
+            Dejanos tu teléfono y te contactamos en menos de 24hs
+          </p>
+          
+          {isSubmitted ? (
+            <div className="flex items-center justify-center gap-2 py-4 text-green-400 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+              <CheckCircle className="h-5 w-5" />
+              <span className="font-medium">Te contactamos pronto.</span>
+            </div>
+          ) : (
+            <form onSubmit={handleQuickSubmit} className="flex rounded-full overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md">
+              <div className="flex items-center gap-2 pl-4 pr-3 py-3 text-white/80 border-r border-white/20 bg-white/5">
+                <span>🇦🇷</span>
+                <span className="text-sm font-medium">+54</span>
               </div>
-            ) : (
-              <form onSubmit={handleQuickSubmit} className="flex">
-                <div className="flex-1 flex items-center bg-white/10 border border-white/20 rounded-l-lg overflow-hidden focus-within:ring-2 focus-within:ring-green-500 focus-within:border-green-500">
-                  <div className="flex items-center gap-2 px-3 py-3 text-white/80 border-r border-white/20 bg-white/5">
-                    <span>🇦🇷</span>
-                    <span className="text-sm font-medium">+54</span>
-                  </div>
-                  <input
-                    type="tel"
-                    placeholder="Tu número de teléfono"
-                    value={telefono}
-                    onChange={(e) => setTelefono(e.target.value)}
-                    className="flex-1 bg-transparent px-3 py-3 text-white placeholder:text-white/50 outline-none"
-                    disabled={isSubmitting}
-                  />
-                </div>
-                <Button 
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-l-none rounded-r-lg transition-all duration-300 whitespace-nowrap"
-                >
-                  {isSubmitting ? (
-                    <Loader2 className="h-5 w-5 animate-spin" />
-                  ) : (
-                    <>
-                      Que me llamen
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </>
-                  )}
-                </Button>
-              </form>
-            )}
-            
-            {error && (
-              <p className="text-red-400 text-sm mt-2">{error}</p>
-            )}
-          </div>
+              <input
+                type="tel"
+                placeholder="Tu número de teléfono"
+                value={telefono}
+                onChange={(e) => setTelefono(e.target.value)}
+                className="flex-1 bg-transparent px-3 py-3 text-white placeholder:text-white/50 outline-none min-w-0"
+                disabled={isSubmitting}
+              />
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-3 rounded-none rounded-r-full transition-all duration-300 whitespace-nowrap"
+              >
+                {isSubmitting ? (
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                ) : (
+                  <>
+                    Que me llamen
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </>
+                )}
+              </Button>
+            </form>
+          )}
+          
+          {error && (
+            <p className="text-red-400 text-sm mt-2">{error}</p>
+          )}
         </div>
 
         {/* Tarjetas de características */}
