@@ -1,7 +1,6 @@
 import Header from '@/components/header'
 import Hero from '@/components/hero'
-import Stats from '@/components/stats'
-import About from '@/components/about'
+import QuienesSomos from '@/components/quienes-somos'
 import Services from '@/components/services'
 import Contact from '@/components/contact'
 import Footer from '@/components/footer'
@@ -9,13 +8,12 @@ import WhatsAppFloating from '@/components/whatsapp-floating'
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-slate-900">
       <Header />
       <section id="inicio">
         <Hero />
       </section>
-      <Stats />
-      <About />
+      <QuienesSomos />
       <Services />
       <Contact />
       <Footer />

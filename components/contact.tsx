@@ -45,9 +45,8 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Validate all fields
     const isValid = Object.entries(formData).every(([key, value]) => {
-      if (key === 'empresa') return true // Optional field
+      if (key === 'empresa') return true
       return validateField(key, value)
     })
 
@@ -56,7 +55,6 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
-      // Save to Supabase
       const supabase = createClient()
       const { error } = await supabase.from('contacts').insert({
         nombre: formData.nombre,
@@ -74,11 +72,9 @@ export default function Contact() {
         setTimeout(() => setShowSuccess(false), 4000)
       }
 
-      // Open WhatsApp
       const whatsappMessage = `Hola, soy ${formData.nombre}${formData.empresa ? ` de ${formData.empresa}` : ''}. Me interesa información sobre ${formData.tipo_residuo}. ${formData.mensaje}. Mi teléfono: ${formData.telefono}, Email: ${formData.email}`
       window.open(`https://wa.me/5491154852128?text=${encodeURIComponent(whatsappMessage)}`, '_blank')
       
-      // Reset form
       setFormData({
         nombre: '',
         telefono: '',
@@ -110,8 +106,11 @@ export default function Contact() {
 
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm mb-6">
+            <span className="text-green-400 text-sm font-medium">Contacto</span>
+          </div>
           <h2 className="text-4xl font-bold text-white mb-4">Contactanos</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Estamos aquí para ayudarte con todas tus necesidades de reciclaje industrial en Buenos Aires
           </p>
         </div>
@@ -127,7 +126,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-white font-semibold text-lg mb-1">Teléfono</h4>
-                <p className="text-gray-300">+54 11 5485-2128</p>
+                <p className="text-gray-400">+54 11 5485-2128</p>
               </div>
             </div>
 
@@ -137,7 +136,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-white font-semibold text-lg mb-1">Email</h4>
-                <p className="text-gray-300">Augustoguilhou@hotmail.com</p>
+                <p className="text-gray-400">Augustoguilhou@hotmail.com</p>
               </div>
             </div>
 
@@ -147,7 +146,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-white font-semibold text-lg mb-1">Ubicación</h4>
-                <p className="text-gray-300">Buenos Aires, Argentina</p>
+                <p className="text-gray-400">Buenos Aires, Argentina</p>
               </div>
             </div>
 
@@ -157,12 +156,12 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-white font-semibold text-lg mb-1">Horarios</h4>
-                <p className="text-gray-300">Lunes a Viernes: 8:00 - 18:00</p>
+                <p className="text-gray-400">Lunes a Viernes: 8:00 - 18:00</p>
               </div>
             </div>
 
             {/* WhatsApp directo */}
-            <div className="bg-green-500 rounded-2xl p-6 mt-8 backdrop-blur-sm">
+            <div className="bg-green-500 rounded-2xl p-6 mt-8">
               <div className="flex items-center mb-4">
                 <MessageCircle className="h-8 w-8 text-white mr-3" />
                 <h4 className="text-white font-bold text-xl">WhatsApp Directo</h4>
@@ -180,7 +179,7 @@ export default function Contact() {
           </div>
 
           {/* Formulario */}
-          <div className="bg-slate-700 rounded-2xl p-8 backdrop-blur-sm hover:ring-1 hover:ring-green-500/30 transition-all duration-300 hover:-translate-y-1">
+          <div className="bg-slate-700 rounded-2xl p-8 border border-white/10 hover:ring-1 hover:ring-green-500/30 transition-all duration-300">
             <h3 className="text-2xl font-bold text-white mb-6">Envíanos un Mensaje</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
