@@ -159,6 +159,10 @@ export default function Hero() {
           {error && (
             <p className="text-red-400 text-sm mt-2">{error}</p>
           )}
+          
+          <p className="text-white/50 text-xs mt-3">
+            🔒 Sin spam. Te contactamos en menos de 2 horas.
+          </p>
         </div>
 
         {/* Tarjetas de características */}
