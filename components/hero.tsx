@@ -2,12 +2,11 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { ArrowRight, Send, CheckCircle, Loader2 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 
 export default function Hero() {
-  const [formData, setFormData] = useState({ nombre: '', telefono: '' })
+  const [telefono, setTelefono] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState('')
@@ -24,8 +23,8 @@ export default function Hero() {
     e.preventDefault()
     setError('')
     
-    if (!formData.nombre.trim() || !formData.telefono.trim()) {
-      setError('Por favor completá todos los campos')
+    if (!telefono.trim()) {
+      setError('Por favor ingresá tu número de teléfono')
       return
     }
 
@@ -34,15 +33,15 @@ export default function Hero() {
     try {
       const supabase = createClient()
       const { error: dbError } = await supabase.from('contacts').insert({
-        nombre: formData.nombre,
-        telefono: formData.telefono,
+        nombre: 'Lead Hero',
+        telefono: `+54${telefono.replace(/\D/g, '')}`,
         mensaje: 'Lead rápido desde Hero'
       })
 
       if (dbError) throw dbError
 
       setIsSubmitted(true)
-      setFormData({ nombre: '', telefono: '' })
+      setTelefono('')
       
       // Reset success state after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000)
@@ -129,22 +128,20 @@ export default function Hero() {
               </div>
             ) : (
               <form onSubmit={handleQuickSubmit} className="flex flex-col sm:flex-row gap-3">
-                <Input
-                  type="text"
-                  placeholder="Tu nombre"
-                  value={formData.nombre}
-                  onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                  className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:ring-green-500 focus:border-green-500"
-                  disabled={isSubmitting}
-                />
-                <Input
-                  type="tel"
-                  placeholder="Tu teléfono"
-                  value={formData.telefono}
-                  onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                  className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:ring-green-500 focus:border-green-500"
-                  disabled={isSubmitting}
-                />
+                <div className="flex-1 flex items-center bg-white/10 border border-white/20 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-green-500 focus-within:border-green-500">
+                  <div className="flex items-center gap-2 px-3 py-2 text-white/80 border-r border-white/20 bg-white/5">
+                    <span>🇦🇷</span>
+                    <span className="text-sm font-medium">+54</span>
+                  </div>
+                  <input
+                    type="tel"
+                    placeholder="Tu número de teléfono"
+                    value={telefono}
+                    onChange={(e) => setTelefono(e.target.value)}
+                    className="flex-1 bg-transparent px-3 py-2 text-white placeholder:text-white/50 outline-none"
+                    disabled={isSubmitting}
+                  />
+                </div>
                 <Button 
                   type="submit"
                   disabled={isSubmitting}
