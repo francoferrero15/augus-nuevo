@@ -1,87 +1,106 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react"
 
 export default function Footer() {
-  const services = [
-    "Destrucción certificada",
-    "Valorización de scrap",
-    "Logística especializada",
-    "Gestión integral",
-    "Certificados de disposición"
-  ]
+  const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#0f1419] border-t border-gray-800">
+    <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Column 1 - Logo & Description */}
-          <div>
-            <Link href="/" className="flex items-center gap-1 mb-6">
-              <span className="font-[family-name:var(--font-barlow-condensed)] text-2xl font-bold text-white tracking-tight">
-                METAL SOLVER
-              </span>
-              <span className="w-2 h-2 rounded-full bg-[#059669] mb-3"></span>
-            </Link>
-            <p className="text-gray-400 leading-relaxed">
-              Empresa argentina con 25 años de trayectoria en gestión, valorización 
-              y destrucción certificada de scrap metálico industrial.
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Logo & Description */}
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold">R.A.G</span>
+              </div>
+              <span className="font-bold text-xl">Reciclado de Chatarra</span>
+            </div>
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              Líderes en compra y reciclaje de chatarra metálica en Buenos Aires. 
+              Más de 25 años transformando residuos en recursos.
             </p>
+            <div className="flex gap-4">
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition-colors"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
-          {/* Column 2 - Services */}
+          {/* Quick Links */}
           <div>
-            <h3 className="font-[family-name:var(--font-barlow-condensed)] text-lg font-bold text-white uppercase mb-6">
-              Servicios
-            </h3>
+            <h4 className="font-semibold text-lg mb-4">Enlaces rápidos</h4>
             <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <Link 
-                    href="#servicios" 
-                    className="text-gray-400 hover:text-[#059669] transition-colors duration-200 hover:translate-x-1 inline-block"
-                  >
-                    {service}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="#inicio" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link href="#servicios" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                  Servicios
+                </Link>
+              </li>
+              <li>
+                <Link href="#nosotros" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                  Nosotros
+                </Link>
+              </li>
+              <li>
+                <Link href="#galeria" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                  Galería
+                </Link>
+              </li>
+              <li>
+                <Link href="#contacto" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                  Contacto
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Column 3 - Contact */}
+          {/* Contact Info */}
           <div>
-            <h3 className="font-[family-name:var(--font-barlow-condensed)] text-lg font-bold text-white uppercase mb-6">
-              Contacto
-            </h3>
-            <div className="space-y-4">
-              <a 
-                href="tel:+5491154852128" 
-                className="flex items-center gap-3 text-gray-400 hover:text-[#059669] transition-colors duration-200 group"
-              >
-                <Phone className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
-                <span>+54 11 5485-2128</span>
-              </a>
-              <a 
-                href="mailto:Augustoguilhou@hotmail.com" 
-                className="flex items-center gap-3 text-gray-400 hover:text-[#059669] transition-colors duration-200 group"
-              >
-                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
-                <span>Augustoguilhou@hotmail.com</span>
-              </a>
-              <div className="flex items-start gap-3 text-gray-400">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Av. Monteverde 2191, San Francisco Solano, Quilmes</span>
-              </div>
-            </div>
+            <h4 className="font-semibold text-lg mb-4">Contacto</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="tel:+5491154852128" className="flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors">
+                  <Phone className="h-4 w-4" />
+                  +54 11 5485-2128
+                </a>
+              </li>
+              <li>
+                <a href="mailto:contacto@rag.com.ar" className="flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors">
+                  <Mail className="h-4 w-4" />
+                  contacto@rag.com.ar
+                </a>
+              </li>
+              <li>
+                <div className="flex items-start gap-2 text-gray-400">
+                  <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <span>San Francisco Solano, Buenos Aires</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Metal Solver SRL. Todos los derechos reservados.
+            <p className="text-gray-400 text-sm">
+              © {currentYear} R.A.G Reciclado de Chatarra. Todos los derechos reservados.
             </p>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-400 text-sm">
               San Francisco Solano, Quilmes, Buenos Aires
             </p>
           </div>

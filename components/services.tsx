@@ -1,105 +1,90 @@
 "use client"
 
-import Link from "next/link"
-import { Recycle, Truck, Settings } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Recycle, Truck, Scale, FileCheck, Cog, Building2 } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Services() {
   const services = [
     {
       icon: Recycle,
-      title: "Destrucción y valorización de scrap",
-      description: "Destrucción certificada y valorización de materiales metálicos industriales con venta como materia prima. Sin proceso de recupero de producto terminado.",
-      features: [
-        "Destrucción certificada",
-        "Venta como materia prima",
-        "Certificado de disposición final",
-        "Scrap metálico de todo tipo"
-      ]
+      title: "Compra de chatarra",
+      description: "Compramos todo tipo de metales: hierro, aluminio, cobre, bronce, acero inoxidable y más.",
+      features: ["Hierro y acero", "Aluminio", "Cobre y bronce", "Metales no ferrosos"]
     },
     {
       icon: Truck,
-      title: "Logística especializada",
-      description: "Flota propia para retiro, transporte y procesamiento de materiales en planta del cliente o en nuestras instalaciones.",
-      features: [
-        "Equipos Roll Off / Roll On",
-        "Hidrogrúas especializadas",
-        "Semirremolques",
-        "Prensas móviles in situ"
-      ]
+      title: "Retiro a domicilio",
+      description: "Retiramos la chatarra directamente de tu ubicación sin costo adicional en toda la zona.",
+      features: ["Sin cargo en zona", "Camiones equipados", "Horarios flexibles", "Respuesta rápida"]
     },
     {
-      icon: Settings,
-      title: "Gestión integral de materiales",
-      description: "Gestión completa del proceso desde el retiro hasta la disposición final, con trazabilidad documentada y auditorías disponibles.",
-      features: [
-        "Auditorías de clientes",
-        "Trazabilidad documental",
-        "Scrap mixto aceptado",
-        "Todos los metales"
-      ]
+      icon: Scale,
+      title: "Pesaje certificado",
+      description: "Contamos con balanzas calibradas y certificadas para garantizar un pesaje justo y transparente.",
+      features: ["Balanzas certificadas", "Pesaje en origen", "Transparencia total", "Tickets detallados"]
+    },
+    {
+      icon: FileCheck,
+      title: "Facturación legal",
+      description: "Emitimos facturas y toda la documentación necesaria para cumplir con los requisitos legales.",
+      features: ["Facturas tipo A/B/C", "Remitos oficiales", "Certificados", "Gestión documental"]
+    },
+    {
+      icon: Cog,
+      title: "Procesamiento",
+      description: "Procesamos y clasificamos los materiales para su posterior reciclaje y reutilización.",
+      features: ["Clasificación", "Compactación", "Corte y preparación", "Gestión de residuos"]
+    },
+    {
+      icon: Building2,
+      title: "Servicio industrial",
+      description: "Soluciones integrales para empresas e industrias con grandes volúmenes de material.",
+      features: ["Contratos fijos", "Contenedores", "Logística integral", "Asesoramiento"]
     }
   ]
 
   return (
-    <div className="bg-white py-20 md:py-28">
+    <section id="servicios" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-0.5 bg-[#059669]"></div>
-              <span className="text-[#059669] font-semibold uppercase text-sm tracking-wide">
-                Nuestros servicios
-              </span>
-            </div>
-            <h2 className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2332] uppercase">
-              Soluciones <span className="text-[#059669]">integrales</span> para tu empresa
-            </h2>
-          </div>
-          <Button 
-            asChild
-            className="bg-[#059669] hover:bg-[#047857] text-white font-semibold uppercase tracking-wide px-8 w-fit"
-          >
-            <Link href="#contacto">Solicitar cotización</Link>
-          </Button>
+        <div className="text-center mb-16">
+          <span className="text-emerald-600 font-semibold uppercase tracking-wide">Nuestros servicios</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+            Soluciones completas en reciclaje
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Ofrecemos un servicio integral de compra, retiro y procesamiento de chatarra metálica 
+            para particulares y empresas.
+          </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div 
-              key={index}
-              className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group"
-            >
-              {/* Card Header */}
-              <div className="bg-[#1a2332] p-6 flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#059669] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
-                  <service.icon className="w-6 h-6 text-white" />
+            <Card key={index} className="group hover:shadow-lg transition-shadow duration-300 border-gray-200">
+              <CardHeader>
+                <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-600 transition-colors">
+                  <service.icon className="h-7 w-7 text-emerald-600 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="font-[family-name:var(--font-barlow-condensed)] text-xl font-bold text-white uppercase leading-tight">
-                  {service.title}
-                </h3>
-              </div>
-              
-              {/* Card Body */}
-              <div className="p-6">
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <CardTitle className="text-xl">{service.title}</CardTitle>
+                <CardDescription className="text-gray-600">
                   {service.description}
-                </p>
-                <ul className="space-y-3">
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-3 text-gray-700">
-                      <span className="w-2 h-2 bg-[#059669] rounded-full flex-shrink-0"></span>
-                      <span className="text-sm font-medium">{feature}</span>
+                    <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-700">
+                      <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                      {feature}
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }

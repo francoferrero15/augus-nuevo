@@ -1,116 +1,99 @@
 "use client"
 
-import { Building2, FileText, Truck } from "lucide-react"
+import Image from "next/image"
+import { CheckCircle2, Leaf, Award, Users } from "lucide-react"
 
 export default function About() {
   const features = [
     {
-      title: "Equipamiento especializado",
-      description: "Camiones, hidrogrúas, prensas móviles y equipos Roll Off/On propios."
+      icon: Leaf,
+      title: "Compromiso ambiental",
+      description: "Reciclamos de manera responsable, reduciendo el impacto ambiental y promoviendo la economía circular."
     },
     {
-      title: "Auditorías de clientes",
-      description: "Aceptamos auditorías de clientes para verificar nuestros procesos y operatoria."
+      icon: Award,
+      title: "Calidad garantizada",
+      description: "Procesamos materiales bajo estrictos estándares de calidad para garantizar la satisfacción de nuestros clientes."
     },
     {
-      title: "Certificados privados",
-      description: "Emitimos certificados de disposición final, tratamiento y trazabilidad de forma privada."
-    },
-    {
-      title: "Scrap mixto aceptado",
-      description: "Recibimos todos los tipos de metales y materiales mixtos en cualquier estado."
+      icon: Users,
+      title: "Atención personalizada",
+      description: "Brindamos un servicio cercano y profesional, adaptándonos a las necesidades de cada cliente."
     }
   ]
 
-  const reasons = [
-    {
-      icon: Building2,
-      title: "25 años de trayectoria",
-      description: "Experiencia comprobada en el sector industrial argentino."
-    },
-    {
-      icon: FileText,
-      title: "Documentación completa",
-      description: "Certificados de disposición final y trazabilidad para cumplimiento corporativo."
-    },
-    {
-      icon: Truck,
-      title: "Logística integral",
-      description: "Retiro en planta con flota propia: Roll Off/On, hidrogrúas y semirremolques."
-    }
+  const benefits = [
+    "Mejor precio del mercado",
+    "Retiro sin costo en zona",
+    "Pago inmediato",
+    "Pesaje certificado",
+    "Facturación legal",
+    "Servicio 24/7 disponible"
   ]
 
   return (
-    <div className="bg-[#f4f5f6] py-20 md:py-28">
+    <section id="nosotros" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Column */}
-          <div>
-            {/* Section Label */}
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-0.5 bg-[#059669]"></div>
-              <span className="text-[#059669] font-semibold uppercase text-sm tracking-wide">
-                Quiénes somos
-              </span>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Image Side */}
+          <div className="relative">
+            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/placeholder.jpg"
+                alt="Instalaciones de R.A.G"
+                fill
+                className="object-cover"
+              />
             </div>
-            
-            {/* Heading */}
-            <h2 className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2332] uppercase mb-6">
-              Metal Solver:{" "}
-              <span className="text-[#059669]">25 años</span>{" "}
-              en gestión de scrap
+            {/* Floating Card */}
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 max-w-xs hidden lg:block">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-bold text-emerald-600">25+</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Años de experiencia</p>
+                  <p className="text-sm text-gray-600">en el mercado argentino</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Content Side */}
+          <div>
+            <span className="text-emerald-600 font-semibold uppercase tracking-wide">Sobre nosotros</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
+              Líderes en reciclaje de metales en Buenos Aires
             </h2>
-            
-            {/* Body Text */}
-            <p className="text-gray-600 text-lg leading-relaxed mb-10">
-              Somos una empresa argentina especializada en la comercialización, gestión integral, 
-              valorización y destrucción certificada de scrap metálico. Ubicados en Av. Monteverde 2191, 
-              San Francisco Solano, Quilmes, operamos con flota propia y equipamiento especializado 
-              para dar respuesta eficiente a grandes volúmenes industriales.
+            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+              En R.A.G nos especializamos en la compra y reciclaje de chatarra metálica. 
+              Con más de 25 años de experiencia, somos tu mejor opción para convertir tus 
+              materiales en valor mientras contribuyes al cuidado del medio ambiente.
             </p>
-            
-            {/* Feature Cards */}
-            <div className="space-y-4">
+
+            {/* Features */}
+            <div className="space-y-6 mb-8">
               {features.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="bg-white rounded-lg p-5 border-l-4 border-[#059669] shadow-sm hover:shadow-md transition-shadow duration-300"
-                >
-                  <h3 className="font-[family-name:var(--font-barlow-condensed)] text-lg font-semibold text-[#1a2332] uppercase mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
+                <div key={index} className="flex gap-4">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="h-6 w-6 text-emerald-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">{feature.title}</h3>
+                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-          
-          {/* Right Column - Sticky Card */}
-          <div className="lg:sticky lg:top-32 lg:self-start">
-            <div className="bg-[#1a2332] rounded-xl p-8 md:p-10 shadow-xl">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-1 h-8 bg-[#059669] rounded-full"></div>
-                <h3 className="font-[family-name:var(--font-barlow-condensed)] text-2xl md:text-3xl font-bold text-white uppercase">
-                  ¿Por qué elegirnos?
-                </h3>
-              </div>
-              
-              <div className="space-y-6">
-                {reasons.map((reason, index) => (
-                  <div key={index} className="flex gap-4 group">
-                    <div className="flex-shrink-0 w-12 h-12 bg-[#059669] rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-                      <reason.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-[family-name:var(--font-barlow-condensed)] text-lg font-semibold text-white uppercase mb-1">
-                        {reason.title}
-                      </h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {reason.description}
-                      </p>
-                    </div>
+
+            {/* Benefits List */}
+            <div className="bg-gray-100 rounded-xl p-6">
+              <h4 className="font-semibold text-gray-900 mb-4">Beneficios de trabajar con nosotros:</h4>
+              <div className="grid grid-cols-2 gap-3">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -118,6 +101,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

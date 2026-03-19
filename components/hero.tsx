@@ -1,92 +1,88 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { ArrowRight, Recycle, Truck, Shield } from "lucide-react"
 
 export default function Hero() {
-  const stats = [
-    { value: "25+", label: "Años de experiencia" },
-    { value: "100%", label: "Destrucción certificada" },
-    { value: "24/7", label: "Servicio disponible" },
-    { value: "AMBA", label: "Cobertura operativa" },
-  ]
-
   return (
-    <div className="relative min-h-screen bg-[#1a2332] overflow-hidden">
-      {/* Orange top border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-[#059669]"></div>
-      
-      {/* Industrial grid pattern */}
-      <div className="absolute inset-0 industrial-pattern"></div>
-      
-      {/* Diagonal orange accent */}
-      <div 
-        className="absolute top-0 right-0 w-1/3 h-full bg-[#059669]/10 hidden lg:block"
-        style={{ clipPath: "polygon(30% 0, 100% 0, 100% 100%, 0% 100%)" }}
-      ></div>
-      
+    <section id="inicio" className="relative min-h-screen flex items-center">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/hero-background.png"
+          alt="Reciclaje de chatarra metálica"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-transparent"></div>
+      </div>
+
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 pt-32 md:pt-40 pb-20">
-        <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-[#263547] rounded-full px-4 py-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#059669]"></span>
-            <span className="text-gray-300 text-sm">25 años en el mercado · Buenos Aires</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-32">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2 bg-emerald-600/20 border border-emerald-500/30 rounded-full px-4 py-2 mb-6">
+            <Recycle className="h-4 w-4 text-emerald-400" />
+            <span className="text-emerald-400 text-sm font-medium">Reciclaje responsable</span>
           </div>
-          
-          {/* Heading */}
-          <h1 className="font-[family-name:var(--font-barlow-condensed)] text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white uppercase leading-tight mb-6">
-            Gestión integral de{" "}
-            <span className="text-[#059669]">scrap metálico</span>{" "}
-            industrial
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            Transformamos tu{" "}
+            <span className="text-emerald-400">chatarra</span>{" "}
+            en valor
           </h1>
-          
-          {/* Subtext */}
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-            Destrucción certificada, valorización y comercialización de materiales. 
-            Flota propia, logística especializada y más de 25 años de trayectoria en Argentina.
+
+          <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+            Somos líderes en reciclaje de metales en Buenos Aires. Compramos chatarra al mejor precio y 
+            contribuimos al cuidado del medio ambiente con más de 25 años de experiencia.
           </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button 
-              asChild
-              size="lg"
-              className="bg-[#059669] hover:bg-[#047857] text-white font-semibold uppercase tracking-wide px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <Link href="#contacto">Solicitar cotización</Link>
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white text-lg px-8">
+              <Link href="#contacto" className="flex items-center gap-2">
+                Solicitar cotización
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </Button>
-            <Button 
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-white/80 text-white hover:bg-white hover:text-[#1a2332] font-semibold uppercase tracking-wide px-8 py-6 text-base bg-transparent transition-all duration-300"
-            >
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8">
               <Link href="#servicios">Ver servicios</Link>
             </Button>
           </div>
-          
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {stats.map((stat, index) => (
-              <div 
-                key={index}
-                className="bg-[#263547] rounded-lg p-5 text-center border border-[#3a4a5f]/50 hover:border-[#059669]/30 transition-all duration-300"
-              >
-                <div className="font-[family-name:var(--font-barlow-condensed)] text-3xl md:text-4xl font-bold text-[#059669] mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-gray-400 text-sm font-medium">
-                  {stat.label}
-                </div>
+
+          {/* Features */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-emerald-600/20 rounded-lg flex items-center justify-center">
+                <Truck className="h-6 w-6 text-emerald-400" />
               </div>
-            ))}
+              <div>
+                <span className="text-white font-semibold block">Retiro gratis</span>
+                <span className="text-gray-400 text-sm">En toda la zona</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-emerald-600/20 rounded-lg flex items-center justify-center">
+                <Shield className="h-6 w-6 text-emerald-400" />
+              </div>
+              <div>
+                <span className="text-white font-semibold block">25+ años</span>
+                <span className="text-gray-400 text-sm">De experiencia</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-emerald-600/20 rounded-lg flex items-center justify-center">
+                <Recycle className="h-6 w-6 text-emerald-400" />
+              </div>
+              <div>
+                <span className="text-white font-semibold block">Eco-friendly</span>
+                <span className="text-gray-400 text-sm">100% reciclable</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
-      {/* Orange bottom line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#059669]"></div>
-    </div>
+    </section>
   )
 }
