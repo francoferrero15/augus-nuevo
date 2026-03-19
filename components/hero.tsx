@@ -10,6 +10,7 @@ export default function Hero() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const [shake, setShake] = useState(false)
 
   const scrollToContact = () => {
     document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
@@ -24,18 +25,21 @@ export default function Hero() {
     setError('')
     
     if (!telefono.trim()) {
-      setError('Por favor ingresá tu número de teléfono')
+      setShake(true)
+      setTimeout(() => setShake(false), 500)
       return
     }
 
     setIsSubmitting(true)
 
+    const fullPhone = `+54${telefono.replace(/\D/g, '')}`
+
     try {
       const supabase = createClient()
       const { error: dbError } = await supabase.from('contacts').insert({
         nombre: 'Lead Hero',
-        telefono: `+54${telefono.replace(/\D/g, '')}`,
-        mensaje: 'Lead rápido desde Hero'
+        telefono: fullPhone,
+        mensaje: 'Solicitud de llamado desde el hero'
       })
 
       if (dbError) throw dbError
@@ -43,10 +47,14 @@ export default function Hero() {
       setIsSubmitted(true)
       setTelefono('')
       
+      // Open WhatsApp with pre-filled message
+      const whatsappMessage = encodeURIComponent(`Hola, quiero que me llamen. Mi número es: ${fullPhone}`)
+      window.open(`https://wa.me/5491154852128?text=${whatsappMessage}`, '_blank')
+      
       // Reset success state after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000)
     } catch {
-      setError('Error al enviar. Intentá de nuevo.')
+      setError('Error al enviar. Intenta de nuevo.')
     } finally {
       setIsSubmitting(false)
     }
@@ -126,7 +134,7 @@ export default function Hero() {
               <span className="font-medium">Te contactamos pronto.</span>
             </div>
           ) : (
-            <form onSubmit={handleQuickSubmit} className="flex rounded-full overflow-hidden border border-white/30 bg-white/10 backdrop-blur-md">
+            <form onSubmit={handleQuickSubmit} className={`flex rounded-full overflow-hidden border border-white/30 bg-white/10 backdrop-blur-md transition-all ${shake ? 'animate-shake border-red-400/50' : ''}`}>
               <div className="flex items-center gap-2 pl-4 pr-3 py-3 text-white border-r border-white/30 bg-white/5">
                 <span>🇦🇷</span>
                 <span className="text-sm font-medium">+54</span>
