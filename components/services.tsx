@@ -9,7 +9,7 @@ export default function Services() {
   }
 
   return (
-    <section id="servicios" className="py-20 bg-gradient-to-br from-slate-700 via-slate-600 to-green-600">
+    <section id="servicios" className="py-24 bg-gradient-to-br from-slate-700 via-slate-600 to-green-600">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Nuestros Servicios de Reciclado</h2>
@@ -20,7 +20,7 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Reciclaje de Metales */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-1 hover:ring-green-500/30 flex flex-col">
             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6 mx-auto">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd" />
@@ -28,9 +28,9 @@ export default function Services() {
             </div>
             <h3 className="text-2xl font-bold text-white mb-4 text-center">Reciclado de Metales</h3>
             <p className="text-gray-300 mb-6 text-center">
-              Reciclaje responsable de chatarra ferrosa y no ferrosa con los mejores precios del mercado y certificación ambiental.
+              Reciclaje responsable de chatarra ferrosa y no ferrosa con los mejores precios del mercado y compromiso ambiental.
             </p>
-            <ul className="space-y-2 mb-6">
+            <ul className="space-y-2 mb-6 flex-grow">
               <li className="flex items-center text-gray-300">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Hierro y Acero
@@ -50,14 +50,18 @@ export default function Services() {
             </ul>
             <Button 
               onClick={() => openWhatsApp('Reciclado de Metales')}
-              className="w-full bg-green-500 hover:bg-green-600 text-white border border-green-400 rounded-full"
+              className="w-full bg-green-500 hover:bg-green-600 text-white border border-green-400 rounded-full mt-auto"
             >
               Consultar Precios
             </Button>
           </div>
 
-          {/* Logística y Transporte */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+          {/* Logística y Transporte - Most Requested */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-1 hover:ring-green-500/30 relative flex flex-col">
+            {/* Badge */}
+            <div className="absolute -top-3 right-4 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+              Servicio más solicitado
+            </div>
             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6 mx-auto">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
@@ -68,7 +72,7 @@ export default function Services() {
             <p className="text-gray-300 mb-6 text-center">
               Servicio completo de retiro, transporte y logística de chatarra con flota propia y seguimiento GPS en tiempo real.
             </p>
-            <ul className="space-y-2 mb-6">
+            <ul className="space-y-2 mb-6 flex-grow">
               <li className="flex items-center text-gray-300">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Retiro en Planta Industrial
@@ -88,14 +92,14 @@ export default function Services() {
             </ul>
             <Button 
               onClick={() => openWhatsApp('Logística y Transporte')}
-              className="w-full bg-green-500 hover:bg-green-600 text-white border border-green-400 rounded-full"
+              className="w-full bg-green-500 hover:bg-green-600 text-white border border-green-400 rounded-full mt-auto"
             >
               Solicitar Servicio
             </Button>
           </div>
 
           {/* Desguace Industrial */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-1 hover:ring-green-500/30 flex flex-col">
             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6 mx-auto">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -105,7 +109,7 @@ export default function Services() {
             <p className="text-gray-300 mb-6 text-center">
               Desmantelamiento profesional de maquinaria y estructuras industriales con máxima recuperación de materiales valiosos.
             </p>
-            <ul className="space-y-2 mb-6">
+            <ul className="space-y-2 mb-6 flex-grow">
               <li className="flex items-center text-gray-300">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Maquinaria Pesada
@@ -125,7 +129,7 @@ export default function Services() {
             </ul>
             <Button 
               onClick={() => openWhatsApp('Desguace Industrial')}
-              className="w-full bg-green-500 hover:bg-green-600 text-white border border-green-400 rounded-full"
+              className="w-full bg-green-500 hover:bg-green-600 text-white border border-green-400 rounded-full mt-auto"
             >
               Pedir Cotización
             </Button>
@@ -134,7 +138,7 @@ export default function Services() {
 
         {/* Sección adicional optimizada para SEO */}
         <div className="mt-16 text-center">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:-translate-y-1 hover:ring-1 hover:ring-green-500/30 transition-all duration-300">
             <h3 className="text-2xl font-bold text-white mb-4">¿Por qué elegir R.A.G para el reciclado de tu chatarra?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
               <div>
@@ -143,7 +147,7 @@ export default function Services() {
               </div>
               <div>
                 <h4 className="font-semibold mb-2 text-green-300">Reciclaje Responsable</h4>
-                <p className="text-sm text-gray-300">Procesos certificados ISO 14001 y compromiso ambiental</p>
+                <p className="text-sm text-gray-300">Procesos responsables y compromiso ambiental</p>
               </div>
               <div>
                 <h4 className="font-semibold mb-2 text-green-300">Experiencia Comprobada</h4>

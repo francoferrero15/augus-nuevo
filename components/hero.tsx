@@ -8,8 +8,21 @@ export default function Hero() {
     document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const scrollToServices = () => {
+    document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-700 via-slate-600 to-green-600">
+      {/* Dot pattern background overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+          backgroundSize: '24px 24px'
+        }}
+      ></div>
+
       {/* Elementos decorativos flotantes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-20 h-20 bg-green-400/20 rounded-full blur-xl animate-pulse"></div>
@@ -20,8 +33,8 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
         {/* Badge superior */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm mb-8">
-          <span className="text-green-300 text-sm font-medium">✨ Líderes en Reciclado de Chatarra</span>
+        <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-md mb-8">
+          <span className="text-green-300 text-sm font-medium">Líderes en Reciclado de Chatarra</span>
         </div>
 
         {/* Título principal optimizado para SEO */}
@@ -38,10 +51,10 @@ export default function Hero() {
         {/* Descripción optimizada con palabras clave */}
         <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed">
           Transformamos chatarra en oportunidades. Reciclaje responsable de metales ferrosos y no ferrosos 
-          en Buenos Aires con más de 10 años de experiencia y certificación ambiental.
+          en Buenos Aires con más de 10 años de experiencia y compromiso ambiental.
         </p>
 
-        {/* Botón de acción principal */}
+        {/* Botones de acción */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
           <Button 
             onClick={scrollToContact}
@@ -51,11 +64,19 @@ export default function Hero() {
             Solicitar Cotización
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
+          <Button 
+            onClick={scrollToServices}
+            size="lg" 
+            variant="outline"
+            className="border-2 border-white text-white hover:bg-white hover:text-slate-800 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 bg-transparent"
+          >
+            Ver Servicios
+          </Button>
         </div>
 
         {/* Tarjetas de características */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-1 hover:ring-green-500/30">
             <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4 mx-auto">
               <span className="text-white font-bold text-xl">10+</span>
             </div>
@@ -63,7 +84,7 @@ export default function Hero() {
             <p className="text-gray-300 text-sm">Líderes en reciclado de chatarra y desguace industrial</p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-1 hover:ring-green-500/30">
             <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4 mx-auto">
               <span className="text-white font-bold text-xl">24/7</span>
             </div>
@@ -71,12 +92,12 @@ export default function Hero() {
             <p className="text-gray-300 text-sm">Disponibilidad total para compra de metales</p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-1 hover:ring-green-500/30">
             <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <span className="text-white font-bold text-xl">ISO</span>
+              <span className="text-white font-bold text-xl">GBA</span>
             </div>
-            <h3 className="text-white font-semibold text-lg mb-2">Certificación ISO 14001</h3>
-            <p className="text-gray-300 text-sm">Reciclaje responsable certificado</p>
+            <h3 className="text-white font-semibold text-lg mb-2">Cobertura Total</h3>
+            <p className="text-gray-300 text-sm">Servicio en todo el Gran Buenos Aires</p>
           </div>
         </div>
       </div>

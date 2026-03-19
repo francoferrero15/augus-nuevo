@@ -1,11 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Phone, Mail, MapPin, Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
@@ -18,6 +27,9 @@ export default function Header() {
 
   return (
     <header className="w-full bg-gradient-to-br from-slate-700 via-slate-600 to-green-600">
+      {/* Green accent line at top */}
+      <div className="h-0.5 bg-green-500"></div>
+      
       {/* Barra superior de contacto */}
       <div className="bg-green-500 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
@@ -28,7 +40,7 @@ export default function Header() {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>info@rag.com.ar</span>
+              <span>Augustoguilhou@hotmail.com</span>
             </div>
           </div>
           <div className="flex items-center space-x-2 mt-2 sm:mt-0">
@@ -39,7 +51,7 @@ export default function Header() {
       </div>
 
       {/* Navegación principal */}
-      <nav className="bg-slate-700/90 backdrop-blur-sm border-b border-white/10">
+      <nav className={`bg-slate-700/90 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -78,14 +90,18 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Botón WhatsApp */}
-            <div className="hidden md:block">
+            {/* Botón WhatsApp with pulse */}
+            <div className="hidden md:block relative">
               <Button 
                 onClick={openWhatsApp}
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105"
               >
                 WhatsApp
               </Button>
+              {/* Pulse indicator */}
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full">
+                <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75"></span>
+              </span>
             </div>
 
             {/* Botón menú móvil */}
