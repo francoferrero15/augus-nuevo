@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { Inter } from 'next/font/google'
-import Script from 'next/script'
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
@@ -86,36 +85,6 @@ export default function RootLayout({
           {children}
           <Toaster />
         </ThemeProvider>
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "R.A.G Reciclado",
-              "description": "Reciclaje responsable de metales ferrosos y no ferrosos en Buenos Aires",
-              "url": "https://rag-reciclado.vercel.app",
-              "logo": "https://rag-reciclado.vercel.app/hero-background.png",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+54-11-5485-2128",
-                "contactType": "customer service",
-                "areaServed": "AR",
-                "availableLanguage": "Spanish"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Buenos Aires",
-                "addressCountry": "AR"
-              },
-              "sameAs": [
-                "https://wa.me/5491154852128"
-              ]
-            })
-          }}
-        />
       </body>
     </html>
   )

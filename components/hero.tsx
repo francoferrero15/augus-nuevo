@@ -1,15 +1,63 @@
 'use client'
 
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, CheckCircle, Loader2 } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
 
 export default function Hero() {
+  const [telefono, setTelefono] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState('')
+  const [shake, setShake] = useState(false)
+
   const scrollToContact = () => {
     document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const scrollToServices = () => {
     document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleQuickSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError('')
+    
+    if (!telefono.trim()) {
+      setShake(true)
+      setTimeout(() => setShake(false), 500)
+      return
+    }
+
+    setIsSubmitting(true)
+
+    const fullPhone = `+54${telefono.replace(/\D/g, '')}`
+
+    try {
+      const supabase = createClient()
+      const { error: dbError } = await supabase.from('contacts').insert({
+        nombre: 'Lead Hero',
+        telefono: fullPhone,
+        mensaje: 'Solicitud de llamado desde el hero'
+      })
+
+      if (dbError) throw dbError
+
+      setIsSubmitted(true)
+      setTelefono('')
+      
+      // Open WhatsApp with pre-filled message
+      const whatsappMessage = encodeURIComponent(`Hola, quiero que me llamen. Mi número es: ${fullPhone}`)
+      window.open(`https://wa.me/5491154852128?text=${whatsappMessage}`, '_blank')
+      
+      // Reset success state after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000)
+    } catch {
+      setError('Error al enviar. Intenta de nuevo.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -55,7 +103,7 @@ export default function Hero() {
         </p>
 
         {/* Botones de acción */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <Button 
             onClick={scrollToContact}
             size="lg" 
@@ -72,6 +120,57 @@ export default function Hero() {
           >
             Ver Servicios
           </Button>
+        </div>
+
+        {/* Mini formulario de captura de leads */}
+        <div className="max-w-[480px] mx-auto mb-16">
+          <p className="text-white/90 text-sm mb-3 font-medium">
+            Dejanos tu teléfono y te contactamos en menos de 24hs
+          </p>
+          
+          {isSubmitted ? (
+            <div className="flex items-center justify-center gap-2 py-4 text-green-400 bg-white/10 backdrop-blur-md rounded-full border border-white/30">
+              <CheckCircle className="h-5 w-5" />
+              <span className="font-medium">Te contactamos pronto.</span>
+            </div>
+          ) : (
+            <form onSubmit={handleQuickSubmit} className={`flex rounded-full overflow-hidden border border-white/30 bg-white/10 backdrop-blur-md ${shake ? 'animate-shake' : ''}`}>
+              <div className="flex items-center gap-2 pl-4 pr-3 py-3 text-white border-r border-white/30 bg-white/5">
+                <span>🇦🇷</span>
+                <span className="text-sm font-medium">+54</span>
+              </div>
+              <input
+                type="tel"
+                placeholder="Tu número de teléfono"
+                value={telefono}
+                onChange={(e) => setTelefono(e.target.value)}
+                className="flex-1 bg-transparent px-3 py-3 text-white placeholder:text-white/50 outline-none min-w-0"
+                disabled={isSubmitting}
+              />
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-3 rounded-none rounded-r-full transition-all duration-300 whitespace-nowrap"
+              >
+                {isSubmitting ? (
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                ) : (
+                  <>
+                    Que me llamen
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </>
+                )}
+              </Button>
+            </form>
+          )}
+          
+          {error && (
+            <p className="text-red-400 text-sm mt-2">{error}</p>
+          )}
+          
+          <p className="text-white/50 text-xs mt-3">
+            🔒 Sin spam. Te contactamos en menos de 2 horas.
+          </p>
         </div>
 
         {/* Tarjetas de características */}
