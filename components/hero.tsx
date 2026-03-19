@@ -121,13 +121,13 @@ export default function Hero() {
           </p>
           
           {isSubmitted ? (
-            <div className="flex items-center justify-center gap-2 py-4 text-green-400 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+            <div className="flex items-center justify-center gap-2 py-4 text-green-400 bg-white/10 backdrop-blur-md rounded-full border border-white/30">
               <CheckCircle className="h-5 w-5" />
               <span className="font-medium">Te contactamos pronto.</span>
             </div>
           ) : (
-            <form onSubmit={handleQuickSubmit} className="flex rounded-full overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md">
-              <div className="flex items-center gap-2 pl-4 pr-3 py-3 text-white/80 border-r border-white/20 bg-white/5">
+            <form onSubmit={handleQuickSubmit} className="flex rounded-full overflow-hidden border border-white/30 bg-white/10 backdrop-blur-md">
+              <div className="flex items-center gap-2 pl-4 pr-3 py-3 text-white border-r border-white/30 bg-white/5">
                 <span>🇦🇷</span>
                 <span className="text-sm font-medium">+54</span>
               </div>
