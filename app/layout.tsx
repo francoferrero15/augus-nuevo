@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
@@ -85,8 +86,10 @@ export default function RootLayout({
           {children}
           <Toaster />
         </ThemeProvider>
-        <script
+        <Script
+          id="structured-data"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
